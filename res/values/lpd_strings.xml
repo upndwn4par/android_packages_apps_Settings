@@ -121,4 +121,8 @@
     <string name="proximity_wake_title">Proximity wake</string>
     <string name="proximity_wake_summary">Prevent accidental wake-up by checking the proximity sensor prior to waking up screen</string>
 
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
+
 </resources>
