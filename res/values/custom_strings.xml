@@ -81,4 +81,8 @@
     <string name="lockscreen_quick_unlock_control_title">Quick unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery or bootloader</string>
+
 </resources>
