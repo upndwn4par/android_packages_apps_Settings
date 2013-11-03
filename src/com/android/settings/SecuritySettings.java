@@ -353,9 +353,15 @@ public class SecuritySettings extends SettingsPreferenceFragment
         mToggleAppInstallation.setChecked(isNonMarketAppsAllowed());
         // Side loading of apps.
         mToggleAppInstallation.setEnabled(mIsPrimary);
+
         if (um.hasUserRestriction(UserManager.DISALLOW_INSTALL_UNKNOWN_SOURCES)
                 || um.hasUserRestriction(UserManager.DISALLOW_INSTALL_APPS)) {
             mToggleAppInstallation.setEnabled(false);
+        }
+
+        if (mIsPrimary) {
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_slim);
         }
 
         mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);

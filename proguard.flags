@@ -16,6 +16,7 @@
 -keep class com.android.settings.notification.*
 -keep class com.android.settings.lollipopdream.notificationlight.*
 -keep class com.android.settings.lollipopdream.*
+-keep class com.android.settings.slim.privacyguard.*
 
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
