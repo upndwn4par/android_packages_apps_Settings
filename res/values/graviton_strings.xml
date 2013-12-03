@@ -42,6 +42,9 @@
     <string name="title_general">General</string>
     <string name="title_custom">Custom</string>
 
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="advanced_settings_title">Advanced</string>
+
     <!--Lockscreen See Through-->
     <string name="see_through_title">See through</string>
     <string name="see_through_summary">Transparent (blurred) lockscreen wallpaper. Your data may be visible to those around you.</string>
@@ -356,5 +359,12 @@
     <string name="bootanim_settings_title">Boot Animation</string>
     <string name="soundpack_settings_title">Sound Packs</string>
     <string name="wallpaper_settings_title_cm">Wallpapers</string>
+
+    <!-- Lights settings screen, screen animation options -->
+    <string name="screen_animation_off_title">Screen-off animation</string>
+    <string name="screen_animation_style_title">Screen-off animation style</string>
+    <string name="screen_animation_style_disabled">Disabled</string>
+    <string name="screen_animation_style_electronbeam">Electron beam</string>
+    <string name="screen_animation_style_fade">Fade out</string>
 
 </resources>

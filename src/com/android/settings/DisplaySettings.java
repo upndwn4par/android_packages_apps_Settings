@@ -17,6 +17,8 @@
 package com.android.settings;
 
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
+import static android.provider.Settings.System.SCREEN_ANIMATION_STYLE;
+
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
@@ -45,6 +47,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -72,6 +75,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_SAVER = "screensaver";
     private static final String WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
+    private static final String KEY_SCREEN_ANIMATION_OFF = "screen_off_animation";
+    private static final String KEY_SCREEN_ANIMATION_STYLE = "screen_animation_style";
+
+    private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -85,6 +92,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mLockScreenRotation;
     private CheckBoxPreference mNotificationPulse;
     private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
+    private CheckBoxPreference mScreenOffAnimation;
+    private ListPreference mScreenAnimationStylePreference;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -106,13 +115,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
-
-        mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
-        if (!RotationPolicy.isRotationSupported(getActivity())) {
-            getPreferenceScreen().removePreference(mDisplayRotationPreference);
-        }
-
-        mLockScreenRotation = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ROTATION);
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -146,10 +148,57 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, Settings.System.NOTIFICATION_LIGHT_PULSE + " not found");
             }
         }
+
+        PreferenceCategory advancedPrefs = (PreferenceCategory) findPreference(CATEGORY_ADVANCED);
+
+	// Display rotation
+        mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
+        if (!RotationPolicy.isRotationSupported(getActivity())) {
+            getPreferenceScreen().removePreference(mDisplayRotationPreference);
+        }
+
+	// Lockscreen rotation
+        mLockScreenRotation = (CheckBoxPreference) findPreference(KEY_LOCKSCREEN_ROTATION);
+
+	// Wake on plug or unplug
 	mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
 	mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(resolver,
 		Settings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED, 0) == 1);
 	mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
+
+	// Screen off animation
+        boolean allowsScreenOffAnimation = getResources().getBoolean(
+                com.android.internal.R.bool.config_screenOffAnimation);
+        boolean requiresFadeAnimation = getResources().getBoolean(
+                com.android.internal.R.bool.config_animateScreenLights);
+        mScreenOffAnimation = (CheckBoxPreference)
+                findPreference(KEY_SCREEN_ANIMATION_OFF);
+        mScreenAnimationStylePreference =
+                (ListPreference) findPreference(KEY_SCREEN_ANIMATION_STYLE);
+
+        if (allowsScreenOffAnimation) {
+            if (!requiresFadeAnimation) {
+                advancedPrefs.removePreference(mScreenOffAnimation);
+                final boolean animationEnabled =
+                        Settings.System.getInt(resolver,
+                                Settings.System.SCREEN_OFF_ANIMATION, 1) != 0;
+                final int currentAnimation =
+                        Settings.System.getInt(resolver, SCREEN_ANIMATION_STYLE, 0);
+
+                mScreenAnimationStylePreference.setOnPreferenceChangeListener(this);
+                if (animationEnabled) {
+                    mScreenAnimationStylePreference.setValue(String.valueOf(currentAnimation));
+                    updateScreenAnimationStylePreferenceDescription(currentAnimation + 1);
+                } else {
+                    mScreenAnimationStylePreference.setValue(String.valueOf(-1));
+                    updateScreenAnimationStylePreferenceDescription(0);
+                }
+            } else {
+                advancedPrefs.removePreference(mScreenAnimationStylePreference);
+            }
+        } else {
+            advancedPrefs.removePreference(mScreenAnimationStylePreference);
+        }
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -248,6 +297,24 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         String[] fontSizeNames = res.getStringArray(R.array.entries_font_size);
         pref.setSummary(String.format(res.getString(R.string.summary_font_size),
                 fontSizeNames[index]));
+    }
+
+    private void updateScreenAnimationStylePreferenceDescription(int currentAnimation) {
+        ListPreference preference = mScreenAnimationStylePreference;
+        String summary;
+        if (currentAnimation < 0) {
+            // Unsupported value
+            summary = "";
+        } else {
+            final CharSequence[] entries = preference.getEntries();
+            final CharSequence[] values = preference.getEntryValues();
+            if (entries == null || entries.length == 0) {
+                summary = "";
+            } else {
+                summary = entries[currentAnimation].toString();
+            }
+        }
+        preference.setSummary(summary);
     }
 
     @Override
@@ -402,6 +469,29 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 	    boolean newValue = (Boolean) objValue;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED, newValue ? 1 : 0);
+        }
+        if (KEY_SCREEN_ANIMATION_STYLE.equals(key)) {
+            int value = Integer.parseInt((String) objValue);
+            try {
+                if (value == -1) {
+                    // disabled
+                    Settings.System.putInt(getContentResolver(),
+                            Settings.System.SCREEN_OFF_ANIMATION, 0);
+                    updateScreenAnimationStylePreferenceDescription(0);
+                } else {
+                    // enabled
+                    Settings.System.putInt(getContentResolver(),
+                            Settings.System.SCREEN_OFF_ANIMATION, 1);
+                    Settings.System.putInt(getContentResolver(),
+                            SCREEN_ANIMATION_STYLE, value);
+
+                    // the indexing here is off by one since the first (disabled)
+                    // value is -1 and the method expects an index.
+                    updateScreenAnimationStylePreferenceDescription(value + 1);
+                }
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist screen animation style setting", e);
+            }
         }
         return true;
     }
