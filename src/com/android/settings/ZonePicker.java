@@ -278,15 +278,10 @@ public class ZonePicker extends ListFragment {
                 // Within a country, we just use the local name for the time zone.
                 mZoneNameFormatter.setTimeZone(tz);
                 displayName = mZoneNameFormatter.format(mNow);
-            } else {
-                // For other countries' time zones, we use the exemplar location.
-                final String localeName = Locale.getDefault().toString();
-                displayName = TimeZoneNames.getExemplarLocation(localeName, olsonId);
             }
 
             final HashMap<String, Object> map = new HashMap<String, Object>();
             map.put(KEY_ID, olsonId);
-            map.put(KEY_DISPLAYNAME, displayName);
             map.put(KEY_GMT, DateTimeSettings.getTimeZoneText(tz, false));
             map.put(KEY_OFFSET, tz.getOffset(mNow.getTime()));
 

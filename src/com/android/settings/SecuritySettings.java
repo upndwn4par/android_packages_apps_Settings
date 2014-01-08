@@ -21,6 +21,7 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
@@ -29,7 +30,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.UserInfo;
+import android.hardware.Camera;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.CheckBoxPreference;
@@ -85,6 +88,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
 
+    private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
+
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
 
@@ -105,6 +110,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mToggleVerifyApps;
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private CheckBoxPreference mEnableKeyguardWidgets;
+    private CheckBoxPreference mEnableCameraWidget;
+    private CheckBoxPreference mEnablePowerMenu;
+    private CheckBoxPreference mSeeThrough;
 
     private Preference mNotificationAccess;
 
@@ -202,6 +210,12 @@ public class SecuritySettings extends RestrictedSettingsFragment
             setupLockAfterPreference();
             updateLockAfterPreferenceSummary();
         }
+
+        // Lockscreen Blur
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
+        mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
+        mSeeThrough.setOnPreferenceChangeListener(this);
 
         // biometric weak liveliness
         mBiometricWeakLiveliness =
@@ -617,8 +631,29 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 Log.e("SecuritySettings", "could not persist lockAfter timeout setting", e);
             }
             updateLockAfterPreferenceSummary();
+        } else if (preference == mSeeThrough) {
+            boolean newValue = (Boolean) value;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
         }
         return true;
+    }
+
+    private boolean isCameraDisabledByDpm() {
+        final DevicePolicyManager dpm =
+                (DevicePolicyManager) this.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        if (dpm != null) {
+            try {
+                final int userId = ActivityManagerNative.getDefault().getCurrentUser().id;
+                final int disabledFlags = dpm.getKeyguardDisabledFeatures(null, userId);
+                final  boolean disabledBecauseKeyguardSecure =
+                        (disabledFlags & DevicePolicyManager.KEYGUARD_DISABLE_SECURE_CAMERA) != 0;
+                return dpm.getCameraDisabled(null) || disabledBecauseKeyguardSecure;
+            } catch (RemoteException e) {
+                Log.e(TAG, "Can't get userId", e);
+            }
+        }
+        return false;
     }
 
     @Override
