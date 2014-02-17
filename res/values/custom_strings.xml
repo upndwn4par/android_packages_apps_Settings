@@ -26,41 +26,43 @@
 
     <!--- cLock -->
     <string name="lock_clock_title">Clock widget</string>
-    <string name="lock_clock_summary">Customize the default Lock and Home screen widget</string>
+    <string name="lock_clock_summary">Customize the default Lock and Home screen widget.</string>
 
     <!-- Screen security -->
-    <string name="screen_security_category">Screen security</string>
+    <string name="screen_security_category">Security</string>
     <string name="screen_security_title">Lock screen</string>
-    <string name="screen_security_summary">View or change lock screen security, delay and timeout settings</string>
+    <string name="screen_security_summary">View or change lock screen security, delay and timeout settings.</string>
 
     <!-- Misc -->
     <string name="title_general">General</string>
+    <string name="title_custom">Custom</string>
 
     <!--Lockscreen See Through-->
     <string name="see_through_title">See through</string>
-    <string name="see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+    <string name="see_through_summary">Transparent (blurred) lockscreen wallpaper. Your data may be visible to those around you.</string>
 
     <!-- Lockscreen Notifications -->
     <!-- Categories -->
     <string name="general">General</string>
     <string name="layout">Layout</string>
     <string name="privacy">Privacy</string>
+    <string name="lockscreen_notification_summary">Enable and customize lockscreen notifications.</string>
 
     <string name="Lockscreen_notifications_header">Lockscreen Notifications</string>
     <string name="lockscreen_notifications">Lockscreen notifications</string>
-    <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen</string>
+    <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen. (may require reboot)</string>
     <string name="pocket_mode">Pocket mode</string>
-    <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device gets back into pocket.</string>
+    <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device goes back into pocket.</string>
     <string name="show_always">Show always</string>
-    <string name="show_always_summary">Always turn screen on when pulled out of pocket, even when there are no notifications pending</string>
+    <string name="show_always_summary">Always turn screen on when pulled out of pocket, even when there are no notifications pending.</string>
     <string name="hide_low_priority">Hide low priority</string>
-    <string name="hide_low_priority_summary">Hide low priority notifications such as google now weather notifications</string>
+    <string name="hide_low_priority_summary">Hide low priority notifications such as google now weather notifications.</string>
     <string name="hide_non_clearable">Hide non clearable</string>
-    <string name="hide_non_clearable_summary">Hide all non clearable notifications</string>
-    <string name="dismiss_all">Allow dismissing all notifications</string>
+    <string name="hide_non_clearable_summary">Hide all non clearable notifications.</string>
+    <string name="dismiss_all">Allow dismissing all notifications.</string>
     <string name="dismiss_all_summary">Allow dismissing even non clearable notifications. Of course, they\'re just hidden from lockscreen and not from the notification panel.</string>
     <string name="expanded_view">Expanded notification view</string>
-    <string name="expanded_view_summary">Show notifications expanded when possible</string>
+    <string name="expanded_view_summary">Show notifications expanded when possible.</string>
     <string name="force_expanded_view">Force expanded view</string>
     <string name="force_expanded_view_summary">Show notifications expanded by default. You still will be able to toggle between expanded and normal view.</string>
     <string name="wake_on_notification">Wake on notification</string>
@@ -69,10 +71,10 @@
     <string name="notifications_height_summary">Number of notifications displayed at once</string>
     <string name="offset_top">Offset to the top of the screen:</string>
     <string name="privacy_mode">Privacy Mode</string>
-    <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
+    <string name="privacy_mode_summary">Disables notifications from being shown and dismissed. This way, you just see the icons of your notifications.</string>
 
     <!-- Lockscreen see through -->
     <string name="lockscreen_see_through_title">See through</string>
-    <string name="lockscreen_see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+    <string name="lockscreen_see_through_summary">Transparent (blurred) lockscreen wallpaper. Your data may be visible to those around you.</string>
 
 </resources>

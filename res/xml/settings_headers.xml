@@ -58,6 +58,29 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
+    <!-- Graviton -->
+    <header android:id="@+id/graviton_section"
+        android:title="@string/graviton_settings_title" />
+
+    <!-- Lockscreen -->
+    <header
+        android:id="@+id/lockscreen_settings"
+        android:title="@string/lock_screen_title"
+        android:breadCrumbTitle="@string/lock_screen_title"
+        android:fragment="com.android.settings.LockscreenSettings"
+        android:icon="@drawable/ic_settings_lockscreen" />
+
+    <!-- SuperSU -->
+    <header
+        android:id="@+id/supersu_settings"
+        android:icon="@drawable/ic_settings_supersu"
+        android:title="@string/supersu_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="eu.chainfire.supersu"
+            android:targetClass="eu.chainfire.supersu.MainActivity" />
+    </header>
+
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />
@@ -201,17 +224,6 @@
         android:fragment="com.android.settings.DevelopmentSettings"
         android:icon="@drawable/ic_settings_development"
         android:title="@string/development_settings_title" />
-
-    <!-- SuperSU -->
-    <header
-        android:id="@+id/supersu_settings"
-        android:icon="@drawable/ic_settings_supersu"
-        android:title="@string/supersu_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="eu.chainfire.supersu"
-            android:targetClass="eu.chainfire.supersu.MainActivity" />
-    </header>
 
     <!-- About Device -->
     <header
