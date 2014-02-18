@@ -78,7 +78,7 @@
     <string name="lockscreen_see_through_summary">Transparent (blurred) lockscreen wallpaper. Your data may be visible to those around you.</string>
 
     <!-- Quick unlock -->
-    <string name="lockscreen_quick_unlock_control_title">Quick unlock</string>
+    <string name="lockscreen_quick_unlock_control_title">Quick unlock</string>	47
     <string name="lockscreen_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
 
 </resources>

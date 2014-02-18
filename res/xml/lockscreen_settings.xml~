@@ -38,11 +38,6 @@
             android:fragment="com.android.settings.LockscreenNotifications"
             android:summary="@string/lockscreen_notification_summary" />
 
-	<CheckBoxPreference
-	    android:key="lockscreen_quick_unlock_control"
-	    android:title="@string/lockscreen_quick_unlock_control_title"
-	    android:summary="@string/lockscreen_quick_unlock_control_summary" />
-
         <CheckBoxPreference
             android:key="lockscreen_see_through"
             android:title="@string/lockscreen_see_through_title"
