@@ -50,10 +50,8 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "LockscreenSettings";
     private ContentResolver resolver;
 
-    private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
 
-    private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mQuickUnlockScreen;
 
     @Override
@@ -63,11 +61,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-        mSeeThrough = (CheckBoxPreference) prefSet.findPreference(KEY_SEE_THROUGH);
-        mSeeThrough.setChecked(Settings.System.getInt(resolver,
-                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
-        mSeeThrough.setOnPreferenceChangeListener(this);
 
 	mQuickUnlockScreen = (CheckBoxPreference) prefSet.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
 	mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
@@ -82,18 +75,13 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
-        if (preference == mSeeThrough) {
-            boolean newValue = (Boolean) value;
-            Settings.System.putInt(getContentResolver(),
-			Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
-	} else if (preference == mQuickUnlockScreen) {
+        if (preference == mQuickUnlockScreen) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, newValue ? 1 : 0);
         } else {
             return false;
         }
-
         return true;
     }
 }

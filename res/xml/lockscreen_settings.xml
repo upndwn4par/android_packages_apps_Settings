@@ -20,47 +20,9 @@
         android:title="@string/lock_screen_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory
-        android:title="@string/title_custom"
-        android:key="lockscreen_custom_category" >
-
-        <PreferenceScreen
-            android:key="lock_clock"
-            android:title="@string/lock_clock_title"
-            android:summary="@string/lock_clock_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.lockclock"
-                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-        </PreferenceScreen>
-
-	<PreferenceScreen
-            android:title="@string/lockscreen_notifications"
-            android:fragment="com.android.settings.LockscreenNotifications"
-            android:summary="@string/lockscreen_notification_summary" />
-
 	<CheckBoxPreference
 	    android:key="lockscreen_quick_unlock_control"
 	    android:title="@string/lockscreen_quick_unlock_control_title"
 	    android:summary="@string/lockscreen_quick_unlock_control_summary" />
-
-        <CheckBoxPreference
-            android:key="lockscreen_see_through"
-            android:title="@string/lockscreen_see_through_title"
-            android:summary="@string/lockscreen_see_through_summary"
-            android:persistent="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/title_general"
-        android:key="lockscreen_general_category" >
-
-        <PreferenceScreen
-            android:fragment="com.android.settings.SecuritySettings"
-            android:key="screen_security"
-            android:title="@string/screen_security_category"
-            android:summary="@string/screen_security_summary" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>
