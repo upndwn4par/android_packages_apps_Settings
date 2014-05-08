@@ -58,7 +58,7 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- Graviton -->
+    <!-- Graviton Settings - Begin -->
     <header android:id="@+id/graviton_section"
         android:title="@string/graviton_settings_title" />
 
@@ -67,8 +67,24 @@
         android:id="@+id/lockscreen_settings"
         android:title="@string/lock_screen_title"
         android:breadCrumbTitle="@string/lock_screen_title"
-        android:fragment="com.android.settings.LockscreenSettings"
+        android:fragment="com.android.settings.graviton.LockscreenSettings"
         android:icon="@drawable/ic_settings_lockscreen" />
+
+    <!-- Power Menu -->
+    <header
+        android:id="@+id/powermenu_settings"
+        android:title="@string/powermenu_title"
+        android:breadCrumbTitle="@string/powermenu_title"
+        android:fragment="com.android.settings.graviton.PowermenuSettings"
+        android:icon="@drawable/ic_settings_power_menu" />
+
+    <!-- Statusbar Menu -->
+    <header
+        android:id="@+id/statusbar_settings"
+        android:title="@string/statusbar_title"
+        android:breadCrumbTitle="@string/statusbar_title"
+        android:fragment="com.android.settings.graviton.StatusbarSettings"
+        android:icon="@drawable/ic_settings_statusbar" />
 
     <!-- SuperSU -->
     <header
@@ -80,6 +96,16 @@
             android:targetPackage="eu.chainfire.supersu"
             android:targetClass="eu.chainfire.supersu.MainActivity" />
     </header>
+
+    <!-- Misc -->
+    <header
+        android:id="@+id/misc_settings"
+        android:title="@string/misc_settings_title"
+        android:breadCrumbTitle="@string/misc_settings_title"
+        android:fragment="com.android.settings.graviton.MiscSettings"
+        android:icon="@drawable/ic_settings_misc" />
+
+    <!-- Graviton Settings - End -->
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"

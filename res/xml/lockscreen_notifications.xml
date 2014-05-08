@@ -73,7 +73,7 @@
             android:dependency="lockscreen_notifications"
             android:defaultValue="30" />
 
-        <com.android.settings.NumberPickerPreference
+        <com.android.settings.graviton.NumberPickerPreference
             android:key="notifications_height"
             android:dialogMessage="@string/notifications_height"
             android:title="@string/notifications_height"

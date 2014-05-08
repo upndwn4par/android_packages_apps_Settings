@@ -21,8 +21,40 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 	<CheckBoxPreference
+	    android:key="lockscreen_see_through"
+	    android:title="@string/lockscreen_see_through_title"
+	    android:summary="@string/lockscreen_see_through_summary"
+	    android:persistent="false" />
+
+        <PreferenceScreen
+            android:key="lock_clock"
+            android:title="@string/lock_clock_title"
+            android:summary="@string/lock_clock_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.cyanogenmod.lockclock"
+                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+        </PreferenceScreen>
+
+	<PreferenceScreen
+	    android:key="lockscreen_notifications"
+            android:title="@string/lockscreen_notifications"
+	    android:summary="@string/lockscreen_notification_summary"
+            android:fragment="com.android.settings.graviton.LockscreenNotifications" />
+
+	<CheckBoxPreference
 	    android:key="lockscreen_quick_unlock_control"
 	    android:title="@string/lockscreen_quick_unlock_control_title"
 	    android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
+        <PreferenceScreen
+            android:key="screen_security"
+            android:fragment="com.android.settings.SecuritySettings"
+            android:title="@string/screen_security_category"
+            android:summary="@string/screen_security_summary" />
+
+	<CheckBoxPreference
+	    android:key="volume_wake_screen"
+	    android:title="@string/volume_wake_screen_title"
+	    android:summary="@string/volume_wake_screen_summary" />
 
 </PreferenceScreen>

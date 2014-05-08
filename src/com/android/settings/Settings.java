@@ -66,6 +66,7 @@ import com.android.settings.accessibility.ToggleCaptioningPreferenceFragment;
 import com.android.settings.accounts.AccountSyncSettings;
 import com.android.settings.accounts.AuthenticatorHelper;
 import com.android.settings.accounts.ManageAccountsSettings;
+import com.android.settings.applications.AppOpsSummary;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.bluetooth.BluetoothEnabler;
@@ -91,6 +92,12 @@ import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.WifiEnabler;
 import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
+
+import com.android.settings.graviton.LockscreenSettings;
+import com.android.settings.graviton.PowermenuSettings;
+import com.android.settings.graviton.StatusbarSettings;
+import com.android.settings.graviton.MiscSettings;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -158,7 +165,10 @@ public class Settings extends PreferenceActivity
             R.id.print_settings,
             R.id.nfc_payment_settings,
             R.id.home_settings,
-            R.id.lockscreen_settings
+            R.id.lockscreen_settings,
+            R.id.powermenu_settings,
+            R.id.statusbar_settings,
+            R.id.misc_settings
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -326,6 +336,7 @@ public class Settings extends PreferenceActivity
         ManageApplications.class.getName(),
         ProcessStatsUi.class.getName(),
         NotificationStation.class.getName(),
+        AppOpsSummary.class.getName(),
         LocationSettings.class.getName(),
         SecuritySettings.class.getName(),
         PrivacySettings.class.getName(),
@@ -351,7 +362,10 @@ public class Settings extends PreferenceActivity
         TrustedCredentialsSettings.class.getName(),
         PaymentSettings.class.getName(),
         KeyboardLayoutPickerFragment.class.getName(),
-        LockscreenSettings.class.getName()
+        LockscreenSettings.class.getName(),
+        PowermenuSettings.class.getName(),
+        StatusbarSettings.class.getName(),
+        MiscSettings.class.getName()
     };
 
     @Override
@@ -1093,6 +1107,7 @@ public class Settings extends PreferenceActivity
     public static class DeviceInfoSettingsActivity extends Settings { /* empty */ }
     public static class ApplicationSettingsActivity extends Settings { /* empty */ }
     public static class ManageApplicationsActivity extends Settings { /* empty */ }
+    public static class AppOpsSummaryActivity extends Settings { /* empty */ }
     public static class StorageUseActivity extends Settings { /* empty */ }
     public static class DevelopmentSettingsActivity extends Settings { /* empty */ }
     public static class AccessibilitySettingsActivity extends Settings { /* empty */ }
@@ -1122,4 +1137,7 @@ public class Settings extends PreferenceActivity
     public static class PrintSettingsActivity extends Settings { /* empty */ }
     public static class PrintJobSettingsActivity extends Settings { /* empty */ }
     public static class LockscreenSettingsActivity extends Settings { /* empty */ }
+    public static class PowermenuSettingsActivity extends Settings { /* empty */ }
+    public static class StatusbarSettingsActivity extends Settings { /* empty */ }
+    public static class MiscSettingsActivity extends Settings { /* empty */ }
 }

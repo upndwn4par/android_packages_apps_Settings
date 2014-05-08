@@ -45,6 +45,18 @@
             android:persistent="false"
             android:ringtoneType="ringtone" />
 
+    <com.android.settings.graviton.IncreasingRingPreference
+            android:key="increasing_ring"
+            android:title="@string/increasing_ring_title"
+            android:dialogTitle="@string/increasing_ring_title"
+            android:persistent="false"
+            android:streamType="ring" />
+
+    <PreferenceScreen
+            android:key="quiet_hours_settings"
+            android:fragment="com.android.settings.graviton.QuietHours"
+            android:title="@string/quiet_hours_title" />
+
     <CheckBoxPreference
          android:key="vibrate_when_ringing"
          android:title="@string/vibrate_when_ringing_title"

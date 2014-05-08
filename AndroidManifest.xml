@@ -581,6 +581,8 @@
                 android:resource="@id/sound_settings" />
         </activity>
 
+        <!-- Graviton. -->
+
         <activity android:name="Settings$LockscreenSettingsActivity"
                 android:label="@string/lock_screen_title"
                 android:taskAffinity=""
@@ -591,9 +593,54 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.LockscreenSettings" />
+                android:value="com.android.settings.graviton.LockscreenSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/lockscreen_settings" />
+        </activity>
+
+        <activity android:name="Settings$PowermenuSettingsActivity"
+                android:label="@string/powermenu_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.graviton.PowermenuSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/powermenu_settings" />
+        </activity>
+
+        <activity android:name="Settings$StatusbarSettingsActivity"
+                android:label="@string/statusbar_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.graviton.StatusbarSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/statusbar_settings" />
+        </activity>
+
+        <activity android:name="Settings$MiscSettingsActivity"
+                android:label="@string/misc_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.graviton.MiscSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/misc_settings" />
         </activity>
 
         <!-- Keep compatibility with old shortcuts. -->

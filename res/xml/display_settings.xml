@@ -27,9 +27,15 @@
                 android:title="@string/wallpaper_settings_title"
                 android:fragment="com.android.settings.WallpaperTypeSettings" />
 
-        <CheckBoxPreference
-            android:key="accelerometer"
-            android:title="@string/accelerometer_title"/>
+	<PreferenceScreen
+		android:key="display_rotation"
+		android:fragment="com.android.settings.graviton.DisplayRotation"
+		android:title="@string/display_rotation_title" />
+
+	<CheckBoxPreference
+	    android:key="wake_when_plugged_or_unplugged"
+	    android:title="@string/wake_when_plugged_or_unplugged_title"
+	    android:summary="@string/wake_when_plugged_or_unplugged_summary" />
 
         <ListPreference
                 android:key="screen_timeout"

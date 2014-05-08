@@ -3,7 +3,7 @@
 * Thanks to the original author!
 */
 
-package com.android.settings;
+package com.android.settings.graviton;
 
 import android.content.Context;
 import android.content.res.TypedArray;

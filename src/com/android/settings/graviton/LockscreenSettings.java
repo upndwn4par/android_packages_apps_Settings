@@ -16,7 +16,10 @@
  *
  */
 
-package com.android.settings;
+package com.android.settings.graviton;
+
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.R;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -30,6 +33,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.UserInfo;
+import android.hardware.Camera;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.UserHandle;
@@ -41,18 +46,28 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
+import android.view.DisplayInfo;
+import android.view.WindowManager;
+import android.view.WindowManagerGlobal;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class LockscreenSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+public class LockscreenSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenSettings";
     private ContentResolver resolver;
 
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
+    public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
+    private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
+
 
     private CheckBoxPreference mQuickUnlockScreen;
+    private CheckBoxPreference mVolumeWakeScreen;
+    private CheckBoxPreference mSeeThrough;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,11 +81,22 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 	mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
 		Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
 	mQuickUnlockScreen.setOnPreferenceChangeListener(this);
+
+	mVolumeWakeScreen = (CheckBoxPreference) prefSet.findPreference(VOLUME_WAKE_SCREEN);
+	mVolumeWakeScreen.setChecked(Settings.System.getInt(resolver,
+		Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+	mVolumeWakeScreen.setOnPreferenceChangeListener(this);
+
+	mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
+	mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
+	mSeeThrough.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        return true;
+	// If we didn't handle it, let preferences handle it.
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -79,6 +105,14 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, newValue ? 1 : 0);
+	} else if (preference == mVolumeWakeScreen) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
+	} else if (preference == mSeeThrough) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
         } else {
             return false;
         }
