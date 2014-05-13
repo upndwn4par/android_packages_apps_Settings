@@ -196,6 +196,9 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
+    <!-- Lockscreen rotation -->
+    <string name="display_lockscreen_rotation_title">Lockscreen</string>
+
     <!-- Volume rocker music controls -->
     <string name="button_volume_music_control_title">Music controls</string>
     <string name="button_volume_music_control_summary">Volume rocker lockscreen music controls.</string>

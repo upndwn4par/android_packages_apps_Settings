@@ -21,14 +21,6 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/title_general"
-        android:key="title_general" >
-
-
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/navbar_cat"
         android:key="navbar_cat" >
 
