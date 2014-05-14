@@ -41,6 +41,11 @@
 	    android:summary="@string/lockscreen_notification_summary"
             android:fragment="com.android.settings.graviton.LockscreenNotifications" />
 
+        <CheckBoxPreference
+            android:key="notification_peek"
+            android:title="@string/notification_peek_title"
+            android:summary="@string/notification_peek_summary" />
+
 	<CheckBoxPreference
 	    android:key="lockscreen_quick_unlock_control"
 	    android:title="@string/lockscreen_quick_unlock_control_title"

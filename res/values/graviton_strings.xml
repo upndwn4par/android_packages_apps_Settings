@@ -311,4 +311,8 @@
     <string name="battery_cat">Battery</string>
     <string name="battery_percentage_indicator_title">Show battery percent</string>
     <string name="battery_percentage_indicator_summary">Show battery percentage indicator front of battery icon</string>
+
+    <!--Notification peek-->
+    <string name="notification_peek_title">Notification peek</string>
+    <string name="notification_peek_summary">Show latest notification after picking up your device</string>
 </resources>

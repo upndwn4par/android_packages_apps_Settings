@@ -62,11 +62,13 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
     public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
     private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
+    private static final String KEY_PEEK = "notification_peek";
 
 
     private CheckBoxPreference mQuickUnlockScreen;
     private CheckBoxPreference mVolumeWakeScreen;
     private CheckBoxPreference mSeeThrough;
+    private CheckBoxPreference mNotificationPeek;
 
 
     @Override
@@ -91,11 +93,15 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
 		Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
 	mSeeThrough.setOnPreferenceChangeListener(this);
+
+	mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
+	mNotificationPeek.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.PEEK_STATE, 0) == 1);
+	mNotificationPeek.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-	// If we didn't handle it, let preferences handle it.
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -113,6 +119,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
+	} else if (preference == mNotificationPeek) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.PEEK_STATE, newValue ? 1 : 0);
         } else {
             return false;
         }
