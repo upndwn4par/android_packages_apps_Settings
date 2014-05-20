@@ -66,11 +66,13 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements Pre
     private static final String PREF_STATUSBAR_SIGNAL_TEXT = "statusbar_signal_text";
     private static final String PREF_STATUSBAR_SIGNAL_TEXT_COLOR = "statusbar_signal_text_color";
     private static final String PREF_STATUS_BAR_TRAFFIC_COLOR = "status_bar_traffic_color";
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
 
     private CheckBoxPreference mStatusBarTraffic;
     private ListPreference mTextStyle;
     private ColorPickerPreference mSignalColor;
     private ColorPickerPreference mTrafficColor;
+    private ListPreference mQuickPulldown;
 
 
 
@@ -97,6 +99,12 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements Pre
         mTrafficColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_TRAFFIC_COLOR);
         mTrafficColor.setOnPreferenceChangeListener(this);
 
+        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
+        Settings.System.QS_QUICK_PULLDOWN, 0);
+        mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
+        updatePulldownSummary(statusQuickPulldown);
     }
 
 
@@ -146,7 +154,26 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements Pre
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_TRAFFIC_COLOR, intHex);
             return true;
+        } else if (preference == mQuickPulldown) {
+            int statusQuickPulldown = Integer.valueOf((String) value);
+            Settings.System.putInt(resolver,
+	    Settings.System.QS_QUICK_PULLDOWN, statusQuickPulldown);
+            updatePulldownSummary(statusQuickPulldown);
+            return true;
         }
         return false;
     }
+
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
+         } else {
+            String direction = res.getString(value == 2
+                    ? R.string.quick_pulldown_left
+                    : R.string.quick_pulldown_right);
+            mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
+         }
+     }
 }
