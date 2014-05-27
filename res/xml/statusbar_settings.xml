@@ -34,14 +34,6 @@
             android:key="status_bar_clock"
             android:title="@string/status_bar_clock" />
 
-	<PreferenceScreen
-	        android:title="@string/notificationtoggle_title"
-	        android:key="notificationtoggle" >
-                <intent android:targetPackage="de.j4velin.notificationToggle"
-		        android:action="android.intent.action.MAIN"
-		        android:targetClass="de.j4velin.notificationToggle.settings.Main" />
-        </PreferenceScreen>
-
         <ListPreference
             android:key="quick_pulldown"
             android:title="@string/title_quick_pulldown"

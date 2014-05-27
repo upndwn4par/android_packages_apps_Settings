@@ -173,10 +173,6 @@
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">Enable battery bar charge charge animation.</string>
 
-    <!--- Notification Toggle -->
-    <string name="notificationtoggle_title">Notification Toggles</string>
-    <string name="notificationtoggle_summary">Customize quick toggles in the notification drawer.</string>
-
     <!--- Network traffic -->
     <string name="status_bar_traffic_title">Network speed indicator</string>
     <string name="status_bar_traffic_summary">Displays network download speed on status bar. May overflow center clock.</string>
