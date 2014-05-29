@@ -62,6 +62,13 @@
     <header android:id="@+id/graviton_section"
         android:title="@string/graviton_settings_title" />
 
+    <!-- Apps ops -->
+    <header
+        android:id="@+id/app_ops_settings"
+        android:icon="@drawable/ic_settings_applications"
+        android:fragment="com.android.settings.applications.AppOpsSummary"
+        android:title="@string/app_ops_settings" />
+
     <!-- Lockscreen -->
     <header
         android:id="@+id/lockscreen_settings"
