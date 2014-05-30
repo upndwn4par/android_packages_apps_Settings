@@ -46,11 +46,6 @@
             android:title="@string/notification_peek_title"
             android:summary="@string/notification_peek_summary" />
 
-	<CheckBoxPreference
-	    android:key="lockscreen_quick_unlock_control"
-	    android:title="@string/lockscreen_quick_unlock_control_title"
-	    android:summary="@string/lockscreen_quick_unlock_control_summary" />
-
         <PreferenceScreen
             android:key="screen_security"
             android:fragment="com.android.settings.SecuritySettings"

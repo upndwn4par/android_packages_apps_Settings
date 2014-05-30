@@ -23,6 +23,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -70,6 +71,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
     private static final String KEY_ENABLE_WIDGETS = "keyguard_enable_widgets";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
+    private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -109,6 +111,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mPowerButtonInstantlyLocks;
     private CheckBoxPreference mEnableKeyguardWidgets;
     private CheckBoxPreference mLockBeforeUnlock;
+    private CheckBoxPreference mQuickUnlockScreen;
 
     private Preference mNotificationAccess;
 
@@ -280,6 +283,15 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 mEnableKeyguardWidgets.setEnabled(!disabled);
             }
         }
+
+        // Quick unlock
+	mQuickUnlockScreen = (CheckBoxPreference) root.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+	if (mQuickUnlockScreen != null) {
+	mQuickUnlockScreen.setChecked(Settings.System.getInt(getContentResolver(),
+	Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
+	mQuickUnlockScreen.setOnPreferenceChangeListener(this);
+	}
+
 
         // Show password
         mShowPassword = (CheckBoxPreference) root.findPreference(KEY_SHOW_PASSWORD);
@@ -633,8 +645,10 @@ public class SecuritySettings extends RestrictedSettingsFragment
             updateLockAfterPreferenceSummary();
         } else if (preference == mLockBeforeUnlock) {
             Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.LOCK_BEFORE_UNLOCK,
-                    ((Boolean) value) ? 1 : 0);
+                        Settings.Secure.LOCK_BEFORE_UNLOCK, ((Boolean) value) ? 1 : 0);
+        } else if (preference == mQuickUnlockScreen) {
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, ((Boolean) value) ? 1 : 0);
         }
         return true;
     }

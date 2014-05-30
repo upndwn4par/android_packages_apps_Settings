@@ -59,13 +59,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
     private static final String TAG = "LockscreenSettings";
     private ContentResolver resolver;
 
-    private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
     public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
     private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
     private static final String KEY_PEEK = "notification_peek";
 
-
-    private CheckBoxPreference mQuickUnlockScreen;
     private CheckBoxPreference mVolumeWakeScreen;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mNotificationPeek;
@@ -78,11 +75,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-	mQuickUnlockScreen = (CheckBoxPreference) prefSet.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
-	mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
-		Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
-	mQuickUnlockScreen.setOnPreferenceChangeListener(this);
 
 	mVolumeWakeScreen = (CheckBoxPreference) prefSet.findPreference(VOLUME_WAKE_SCREEN);
 	mVolumeWakeScreen.setChecked(Settings.System.getInt(resolver,
@@ -107,11 +99,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
-        if (preference == mQuickUnlockScreen) {
-	    boolean newValue = (Boolean) value;
-	    Settings.System.putInt(getContentResolver(),
-			Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, newValue ? 1 : 0);
-	} else if (preference == mVolumeWakeScreen) {
+	if (preference == mVolumeWakeScreen) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
