@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Opties..."</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Geavanceerd"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Geavanceerde Bluetooth"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Schakel Bluetooth in om apparaten te bekijken."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Als Bluetooth is ingeschakeld, kan uw apparaat communiceren met andere Bluetooth-apparaten in de buurt."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Verbinding maken met…"</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Media-audio"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Telefoonaudio"</string>
@@ -503,14 +503,9 @@
     <string name="bluetooth_dock_settings_headset" msgid="1001821426078644650">"Als luidsprekertelefoon"</string>
     <string name="bluetooth_dock_settings_a2dp" msgid="8791004998846630574">"Voor muziek en media"</string>
     <string name="bluetooth_dock_settings_remember" msgid="5551459057010609115">"Instellingen onthouden"</string>
-    <string name="wifi_display_settings_title" msgid="564299108014609382">"Draadloze display"</string>
-    <string name="wifi_display_settings_empty_list_wifi_display_off" msgid="1225626898926363100">"Als u apparaten wilt zien, schakelt u draadloze display in."</string>
-    <string name="wifi_display_settings_empty_list_wifi_display_disabled" msgid="1336244693183075466">"Draadloze display wordt uitgeschakeld omdat wifi is uitgeschakeld."</string>
-    <string name="wifi_display_search_for_devices" msgid="5065526281193354502">"Zoeken naar displays"</string>
-    <string name="wifi_display_searching_for_devices" msgid="5172373825348672137">"Zoeken…"</string>
-    <string name="wifi_display_no_devices_found" msgid="8180582698282377626">"Geen draadloze displays in de buurt."</string>
-    <string name="wifi_display_paired_devices" msgid="7395326840730024303">"Gekoppelde displays"</string>
-    <string name="wifi_display_available_devices" msgid="4558314642853513487">"Beschikbare apparaten"</string>
+    <string name="wifi_display_settings_title" msgid="2925465988657380522">"Scherm casten"</string>
+    <string name="wifi_display_enable_menu_item" msgid="4883036464138167674">"Draadloze weergave inschakelen"</string>
+    <string name="wifi_display_no_devices_found" msgid="1382012407154143453">"Geen apparaten in de buurt gevonden."</string>
     <string name="wifi_display_status_connecting" msgid="5688608834000748607">"Verbinding maken"</string>
     <string name="wifi_display_status_connected" msgid="8364125226376985558">"Verbonden"</string>
     <string name="wifi_display_status_available" msgid="1924167525172207067">"Beschikbaar"</string>
@@ -979,7 +974,11 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"Tethering van <xliff:g id="DEVICE_NAME">%1$s</xliff:g> wordt opgeheven."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Help"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Mobiele netwerken"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Mobiel abonnement beheren"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Mobiel abonnement"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Standaard sms-app"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Sms-app wijzigen?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Wilt u <xliff:g id="NEW_APP">%1$s</xliff:g> als uw sms-app gebruiken in plaats van <xliff:g id="CURRENT_APP">%2$s</xliff:g>?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Wilt u <xliff:g id="NEW_APP">%s</xliff:g> gebruiken als uw sms-app?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Onbekende simprovider"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"%1$s heeft geen bekende website voor provisioning"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Plaats een simkaart en start het apparaat opnieuw"</string>
@@ -1361,6 +1360,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Instellingen"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Aan"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Uit"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Voorbeeld"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Standaardopties"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Taal"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Tekengrootte"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Ondertitelstijl"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Aangepaste opties"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Achtergrondkleur"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Transparantie van achtergrond"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Tekstkleur"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Transparantie van tekst"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Randkleur"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Randtype"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Lettertypefamilie"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"Ondertiteling ziet er zo uit"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Standaard"</string>
+    <string name="color_none" msgid="3475640044925814795">"Geen"</string>
+    <string name="color_white" msgid="8045195170201590239">"Wit"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Grijs"</string>
+    <string name="color_black" msgid="7517353520909872561">"Zwart"</string>
+    <string name="color_red" msgid="4949354900304125428">"Rood"</string>
+    <string name="color_green" msgid="5537717328428845841">"Groen"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Blauw"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Cyaanblauw"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Geel"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Magenta"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"<xliff:g id="SERVICE">%1$s</xliff:g> gebruiken?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> moet het volgende kunnen:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Uw acties observeren"</string>

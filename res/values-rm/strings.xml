@@ -671,7 +671,7 @@
     <skip />
     <!-- no translation found for bluetooth_advanced_titlebar (2142159726881547669) -->
     <skip />
-    <!-- no translation found for bluetooth_empty_list_bluetooth_off (4793562956642282639) -->
+    <!-- no translation found for bluetooth_empty_list_bluetooth_off (6351930724051893423) -->
     <skip />
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Connectar cun…"</string>
     <!-- no translation found for bluetooth_profile_a2dp (2031475486179830674) -->
@@ -2106,6 +2106,58 @@
     <!-- no translation found for accessibility_feature_state_on (2864292320042673806) -->
     <skip />
     <!-- no translation found for accessibility_feature_state_off (4172584906487070211) -->
+    <skip />
+    <!-- no translation found for captioning_preview_title (1234015253497016890) -->
+    <skip />
+    <!-- no translation found for captioning_standard_options_title (3284211791180335844) -->
+    <skip />
+    <!-- no translation found for captioning_locale (4559155661018823503) -->
+    <skip />
+    <!-- no translation found for captioning_text_size (6737002449104466028) -->
+    <skip />
+    <!-- no translation found for captioning_preset (8939737196538429044) -->
+    <skip />
+    <!-- no translation found for captioning_custom_options_title (5067500939930322405) -->
+    <skip />
+    <!-- no translation found for captioning_background_color (9053011212948992570) -->
+    <skip />
+    <!-- no translation found for captioning_background_opacity (6029993616419971202) -->
+    <skip />
+    <!-- no translation found for captioning_foreground_color (85623486537640059) -->
+    <skip />
+    <!-- no translation found for captioning_foreground_opacity (4370967856995419788) -->
+    <skip />
+    <!-- no translation found for captioning_edge_color (3670094753735263238) -->
+    <skip />
+    <!-- no translation found for captioning_edge_type (5997247394951682154) -->
+    <skip />
+    <!-- no translation found for captioning_typeface (1826169240566563259) -->
+    <skip />
+    <!-- no translation found for captioning_preview_text (4067935959797375065) -->
+    <skip />
+    <!-- no translation found for captioning_preview_characters (7105909138497851769) -->
+    <skip />
+    <!-- no translation found for locale_default (2593883646136326969) -->
+    <skip />
+    <!-- no translation found for color_none (3475640044925814795) -->
+    <skip />
+    <!-- no translation found for color_white (8045195170201590239) -->
+    <skip />
+    <!-- no translation found for color_gray (9192312087142726313) -->
+    <skip />
+    <!-- no translation found for color_black (7517353520909872561) -->
+    <skip />
+    <!-- no translation found for color_red (4949354900304125428) -->
+    <skip />
+    <!-- no translation found for color_green (5537717328428845841) -->
+    <skip />
+    <!-- no translation found for color_blue (7731984529016953223) -->
+    <skip />
+    <!-- no translation found for color_cyan (7033027180641173211) -->
+    <skip />
+    <!-- no translation found for color_yellow (9112680561610873529) -->
+    <skip />
+    <!-- no translation found for color_magenta (5059212823607815549) -->
     <skip />
     <!-- no translation found for enable_service_title (3061307612673835592) -->
     <skip />

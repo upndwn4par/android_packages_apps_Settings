@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"الخيارات…"</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"إعدادات متقدمة"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"إعدادات بلوتوث المتقدمة"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"لمشاهدة الأجهزة، شغّل البلوتوث."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"عند تشغيل البلوتوث، يمكن للجهاز التواصل مع أجهزة البلوتوث الأخرى القريبة."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"الاتصال بـ…"</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"الإعدادات الصوتية للوسائط"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"الإعدادات الصوتية للهاتف"</string>
@@ -979,10 +979,14 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"سيتم إلغاء ربط <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"مساعدة"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"شبكات الجوال"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"إدارة خطة الجوّال"</string>
-    <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"مشغل SIM غير معروف"</string>
-    <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"ليس لدى %1$s موقع ويب معروف لإدارة حسابات"</string>
-    <string name="mobile_insert_sim_card" msgid="9052590985784056395">"الرجاء إدخال بطاقة SIM وإعادة التشغيل"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"خطة الجوّال"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"‏تطبيق الرسائل القصيرة SMS الافتراضي"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"‏هل تريد تغيير تطبيق الرسائل القصيرة SMS؟"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"‏هل تريد استخدام <xliff:g id="NEW_APP">%1$s</xliff:g> بدلاً من <xliff:g id="CURRENT_APP">%2$s</xliff:g> كتطبيق للرسائل القصيرة SMS؟"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"‏هل تريد استخدام <xliff:g id="NEW_APP">%s</xliff:g> كتطبيق للرسائل القصيرة SMS؟"</string>
+    <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"‏مشغل SIM غير معروف"</string>
+    <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"‏ليس لدى %1$s موقع ويب معروف لإدارة حسابات"</string>
+    <string name="mobile_insert_sim_card" msgid="9052590985784056395">"‏الرجاء إدخال بطاقة SIM وإعادة التشغيل"</string>
     <string name="mobile_connect_to_internet" msgid="1733894125065249639">"الرجاء الاتصال بالإنترنت"</string>
     <string name="location_title" msgid="1029961368397484576">"موقعي"</string>
     <string name="location_network_based" msgid="9134175479520582215">"شبكة Wi-Fi وموقع شبكة الجوّال"</string>
@@ -1361,6 +1365,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"الإعدادات"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"تشغيل"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"إيقاف"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"معاينة"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"خيارات قياسية"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"اللغة"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"حجم النص"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"نمط التسمية التوضيحية"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"خيارات مخصصة"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"لون الخلفية"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"تعتيم الخلفية"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"لون النص"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"تعتيم النص"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"لون الحافة"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"نوع الحافة"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"مجموعة الخطوط"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"ستبدو التسميات التوضيحية بالشكل التالي"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"افتراضي"</string>
+    <string name="color_none" msgid="3475640044925814795">"بدون"</string>
+    <string name="color_white" msgid="8045195170201590239">"أبيض"</string>
+    <string name="color_gray" msgid="9192312087142726313">"رمادي"</string>
+    <string name="color_black" msgid="7517353520909872561">"أسود"</string>
+    <string name="color_red" msgid="4949354900304125428">"أحمر"</string>
+    <string name="color_green" msgid="5537717328428845841">"أخضر"</string>
+    <string name="color_blue" msgid="7731984529016953223">"أزرق"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"سماوي"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"أصفر"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"أرجواني"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"هل تريد استخدام <xliff:g id="SERVICE">%1$s</xliff:g>؟"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"خدمة <xliff:g id="SERVICE">%1$s</xliff:g> تحتاج إلى:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"ملاحظة الإجراءات"</string>

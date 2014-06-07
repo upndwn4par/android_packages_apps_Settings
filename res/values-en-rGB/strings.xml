@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Options…"</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Advanced"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Advanced Bluetooth"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"To see devices, turn Bluetooth on."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"When Bluetooth is turned on, your device can communicate with other nearby Bluetooth devices."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Connect to…"</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Media audio"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Phone audio"</string>
@@ -979,7 +979,11 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> will be untethered."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Help"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Mobile networks"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Manage mobile plan"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Mobile plan"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Default SMS app"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Change SMS app?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Use <xliff:g id="NEW_APP">%1$s</xliff:g> instead of <xliff:g id="CURRENT_APP">%2$s</xliff:g> as your SMS app?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Use <xliff:g id="NEW_APP">%s</xliff:g> as your SMS app?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Unknown SIM operator"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"%1$s has no known provisioning website"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Please insert SIM card and restart"</string>
@@ -1361,6 +1365,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Settings"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"On"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Off"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Preview"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Standard options"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Language"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Text size"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Caption style"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Customisation options"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Background colour"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Background opacity"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Text colour"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Text opacity"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Edge colour"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Edge type"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Font family"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"Captions will look like this"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Default"</string>
+    <string name="color_none" msgid="3475640044925814795">"None"</string>
+    <string name="color_white" msgid="8045195170201590239">"White"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Grey"</string>
+    <string name="color_black" msgid="7517353520909872561">"Black"</string>
+    <string name="color_red" msgid="4949354900304125428">"Red"</string>
+    <string name="color_green" msgid="5537717328428845841">"Green"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Blue"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Cyan"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Yellow"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Magenta"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Use <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> needs to:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Observe your actions"</string>

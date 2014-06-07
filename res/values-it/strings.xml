@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Opzioni..."</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Avanzate"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Bluetooth avanzato"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Per visualizzare i dispositivi, attiva Bluetooth."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Quando il Bluetooth è attivato, il dispositivo può comunicare con altri dispositivi che si trovano nelle vicinanze."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Connessione a…"</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Audio multimediale"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Audio telefono"</string>
@@ -979,12 +979,31 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"Sarà annullato il tethering per <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Guida"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Reti mobili"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Gestione piano dati mobili"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Piano dati mobile"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"App SMS predefinita"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Cambiare app per SMS?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Utilizzare <xliff:g id="NEW_APP">%1$s</xliff:g> anziché <xliff:g id="CURRENT_APP">%2$s</xliff:g> come app per SMS?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Utilizzare <xliff:g id="NEW_APP">%s</xliff:g> come app per SMS?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Operatore SIM sconosciuto"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"Nessun sito web di provisioning per %1$s"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Inserisci la scheda SIM e riavvia"</string>
     <string name="mobile_connect_to_internet" msgid="1733894125065249639">"Connettiti a Internet"</string>
     <string name="location_title" msgid="1029961368397484576">"La mia posizione"</string>
+    <string name="location_mode_title" msgid="3982009713118421689">"Modalità"</string>
+    <string name="location_mode_high_accuracy_title" msgid="8241802585110932849">"Alta precisione"</string>
+    <string name="location_mode_battery_saving_title" msgid="711273645208158637">"Basso consumo"</string>
+    <string name="location_mode_sensors_only_title" msgid="3040366132175435160">"Solo dispositivo"</string>
+    <string name="location_mode_location_off_title" msgid="2829713015012529465">"Geolocalizzazione non attiva"</string>
+    <string name="location_category_recent_location_requests" msgid="1938721350424447421">"Richieste di posizione recenti"</string>
+    <string name="location_no_recent_apps" msgid="2800907699722178041">"Nessuna applicazione ha richiesto la posizione di recente"</string>
+    <string name="location_category_location_services" msgid="7437150886946685979">"Servizi di localizzazione"</string>
+    <string name="location_high_battery_use" msgid="517199943258508020">"Elevato utilizzo della batteria"</string>
+    <string name="location_low_battery_use" msgid="8602232529541903596">"Basso utilizzo della batteria"</string>
+    <string name="location_mode_screen_title" msgid="4528716772270246542">"Modalità di geolocalizzazione"</string>
+    <string name="location_mode_high_accuracy_description" msgid="6418936349431602808">"Usa reti GPS, Wi-Fi e mobili per stabilire la posizione"</string>
+    <string name="location_mode_battery_saving_description" msgid="1728668969743485109">"Usa reti Wi-Fi e mobili per stabilire la posizione"</string>
+    <string name="location_mode_sensors_only_description" msgid="7178415350457794366">"Usa GPS per stabilire la posizione"</string>
+    <string name="location_loading_injected_setting" msgid="4238574500081976654">"Recupero…"</string>
     <string name="location_network_based" msgid="9134175479520582215">"Posizione Wi‑Fi e rete mobile"</string>
     <string name="location_neighborhood_level" msgid="5626515380188353712">"Consenti alle app di usare localizzazione Google per stabilire la tua posizione. Saranno raccolti e inviati a Google dati anonimi."</string>
     <string name="location_neighborhood_level_wifi" msgid="4234820941954812210">"Posizione determinata da Wi‑Fi"</string>
@@ -1307,6 +1326,8 @@
     <string name="select_runtime_title" msgid="649783802363155346">"Seleziona runtime"</string>
     <string name="select_runtime_dialog_title" msgid="5314872813037493958">"Seleziona runtime"</string>
     <string name="select_runtime_warning_message" msgid="1937574953265648165">"Riavviare per modificare runtime da <xliff:g id="OLD">%1$s</xliff:g> a <xliff:g id="NEW">%2$s</xliff:g>?"</string>
+    <string name="wifi_display_certification" msgid="8611569543791307533">"Certificazione display wireless"</string>
+    <string name="wifi_display_certification_summary" msgid="1155182309166746973">"Mostra opzioni per la certificazione display wireless"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Posizioni fittizie"</string>
     <string name="allow_mock_location_summary" msgid="317615105156345626">"Consenti posizioni fittizie"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Consentire debug USB?"</string>
@@ -1359,8 +1380,34 @@
     <string name="accessibility_toggle_speak_password_preference_title" msgid="5986628515113204844">"Pronuncia le password"</string>
     <string name="accessibility_long_press_timeout_preference_title" msgid="6708467774619266508">"Ritardo tocco e pressione"</string>
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Impostazioni"</string>
-    <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Attiva"</string>
-    <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Non attiva"</string>
+    <string name="accessibility_feature_state_on" msgid="2864292320042673806">"ON"</string>
+    <string name="accessibility_feature_state_off" msgid="4172584906487070211">"OFF"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Anteprima"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Opzioni standard"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Lingua"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Dimensioni testo"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Stile sottotitoli"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Opzioni personalizzate"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Colore sfondo"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Opacità sfondo"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Colore del testo"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Opacità del testo"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Colore bordo"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Tipo di bordo"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Famiglia di caratteri"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"I sottotitoli verranno visualizzati così"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Predefinita"</string>
+    <string name="color_none" msgid="3475640044925814795">"Nessuno"</string>
+    <string name="color_white" msgid="8045195170201590239">"Bianco"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Grigio"</string>
+    <string name="color_black" msgid="7517353520909872561">"Nero"</string>
+    <string name="color_red" msgid="4949354900304125428">"Rosso"</string>
+    <string name="color_green" msgid="5537717328428845841">"Verde"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Blu"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Ciano"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Giallo"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Magenta"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Utilizzare <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> deve:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Osservare le tue azioni"</string>

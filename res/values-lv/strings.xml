@@ -227,7 +227,7 @@
     <string name="radio_info_smsc_refresh_label" msgid="6902302130315125102">"Atsvaidzināt"</string>
     <string name="radio_info_toggle_dns_check_label" msgid="8292252930563286858">"Pārslēgt sistēmas DNS pārbaudi"</string>
     <string name="oem_radio_info_label" msgid="6163141792477958941">"OEM raksturīga informācija/iestatījumi"</string>
-    <string name="band_mode_title" msgid="954174198903776205">"Iestatīt GSM frekvenču joslu"</string>
+    <string name="band_mode_title" msgid="954174198903776205">"Iestatīt GSM/UMTS frekvenču joslu"</string>
     <string name="band_mode_loading" msgid="548764766363847336">"Notiek joslu saraksta ielāde..."</string>
     <string name="band_mode_set" msgid="5730560180249458484">"Iestatīt"</string>
     <string name="band_mode_failed" msgid="1495968863884716379">"Neizdevās"</string>
@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Iespējas…"</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Papildu iestatījumi"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Bluetooth papildu iestatījumi"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Lai skatītu ierīces, ieslēdziet Bluetooth."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Kad Bluetooth ir ieslēgts, ierīce var sazināties ar citām Bluetooth ierīcēm tuvumā."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Savienot ar..."</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Multivides audio"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Tālruņa audio"</string>
@@ -979,7 +979,11 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"Ierīce <xliff:g id="DEVICE_NAME">%1$s</xliff:g> tiks atsaistīta."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Palīdzība"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Mobilo sakaru tīkli"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Pārvaldīt mob. ier. pakalp. tarifu"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Mobilo sakaru pakalpojumu plāns"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Noklusējuma īsziņu lietotne"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Vai mainīt īsziņu lietotni?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Vai īsziņām izmantot lietotni <xliff:g id="NEW_APP">%1$s</xliff:g>, nevis <xliff:g id="CURRENT_APP">%2$s</xliff:g>?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Vai izmantot lietotni <xliff:g id="NEW_APP">%s</xliff:g> kā īsziņu lietotni?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Nezināms SIM operators"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"Operatora %1$s nodrošināšanas vietne nav zināma."</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Lūdzu, ievietojiet SIM karti un restartējiet."</string>
@@ -1361,6 +1365,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Iestatījumi"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Ieslēgta"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Izslēgta"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Priekšskatījums"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Standarta opcijas"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Valoda"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Teksta lielums"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Paraksta stils"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Pielāgotas opcijas"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Fona krāsa"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Fona necaurredzamība"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Teksta krāsa"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Teksta necaurredzamība"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Malu krāsa"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Malu veids"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Fontu saime"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"Paraksti izskatīsies šādi:"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Noklusējums"</string>
+    <string name="color_none" msgid="3475640044925814795">"Nav"</string>
+    <string name="color_white" msgid="8045195170201590239">"Balta"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Pelēka"</string>
+    <string name="color_black" msgid="7517353520909872561">"Melna"</string>
+    <string name="color_red" msgid="4949354900304125428">"Sarkana"</string>
+    <string name="color_green" msgid="5537717328428845841">"Zaļa"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Zila"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Ciānzila"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Dzeltena"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Fuksīnsarkana"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Vai izmantot pakalpojumu <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"Pakalpojumam <xliff:g id="SERVICE">%1$s</xliff:g> nepieciešams:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Novērot jūsu darbības."</string>

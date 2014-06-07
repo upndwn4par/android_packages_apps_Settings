@@ -257,7 +257,7 @@
     <string name="battery_info_label" msgid="4132685016148679403">"Info o baterii"</string>
     <string name="display_label" msgid="8074070940506840792">"Displej"</string>
     <string name="phone_info_label" product="tablet" msgid="7820855350955963628">"Informace o tabletu"</string>
-    <string name="phone_info_label" product="default" msgid="2127552523124277664">"Info o telefonu"</string>
+    <string name="phone_info_label" product="default" msgid="2127552523124277664">"Informace o telefonu"</string>
     <string name="sd_card_settings_label" product="nosdcard" msgid="8101475181301178428">"Úložiště USB"</string>
     <string name="sd_card_settings_label" product="default" msgid="5743100901106177102">"Karta SD"</string>
     <string name="proxy_settings_label" msgid="3271174136184391743">"Nastavení proxy serveru"</string>
@@ -304,7 +304,9 @@
     <string name="lock_after_timeout" msgid="4590337686681194648">"Automaticky zamknout"</string>
     <string name="lock_after_timeout_summary" msgid="6128431871360905631">"<xliff:g id="TIMEOUT_STRING">%1$s</xliff:g> po přechodu do spánku"</string>
     <string name="show_owner_info_on_lockscreen_label" msgid="5074906168357568434">"Zobrazovat vlastníka na zamčené obrazovce"</string>
-    <string name="owner_info_settings_title" msgid="2723190010708381889">"Info o vlastníkovi"</string>
+    <string name="owner_info_settings_title" msgid="2723190010708381889">"Informace o vlastníkovi"</string>
+    <string name="security_enable_widgets_title" msgid="2754833397070967846">"Aktivovat widgety"</string>
+    <string name="security_enable_widgets_disabled_summary" msgid="1557090442377855233">"Zakázáno administrátorem"</string>
     <string name="owner_info_settings_summary" msgid="3800834657847339570"></string>
     <string name="owner_info_settings_edit_text_hint" msgid="4608681417960923911">"Zadejte text, který se zobrazí na zamčené obrazovce"</string>
     <string name="show_user_info_on_lockscreen_label" msgid="8408914624925608365">"Zobrazovat uživatele na uzamčené obrazovce"</string>
@@ -466,7 +468,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Možnosti"</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Pokročilé"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Pokročilé nastavení Bluetooth"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Chcete-li zobrazit zařízení, zapněte Bluetooth."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Když je zapnutá funkce Bluetooth, zařízení může komunikovat s ostatními zařízeními Bluetooth v okolí."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Připojit k síti…"</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Zvuk médií"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Zvuk telefonu"</string>
@@ -979,7 +981,11 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"U zařízení <xliff:g id="DEVICE_NAME">%1$s</xliff:g> bude ukončeno sdílené připojení."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Nápověda"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Mobilní sítě"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Správa mobilního tarifu"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Mobilní tarif"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Výchozí aplikace SMS"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Chcete změnit aplikaci SMS?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Chcete pro zprávy SMS používat aplikaci <xliff:g id="NEW_APP">%1$s</xliff:g> místo aplikace <xliff:g id="CURRENT_APP">%2$s</xliff:g>?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Chcete pro zprávy SMS používat aplikaci <xliff:g id="NEW_APP">%s</xliff:g>?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Neznámý operátor SIM karty"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"%1$s nemá žádný známý web pro správu účtů."</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Vložte SIM kartu a restartujte zařízení."</string>
@@ -1000,7 +1006,7 @@
     <string name="location_access_summary" msgid="69031404093194341">"Povolit aplikacím, které o to požádaly, používat údaje o poloze"</string>
     <string name="location_sources_heading" msgid="1278732419851088319">"Zdroje polohy"</string>
     <string name="about_settings" product="tablet" msgid="593457295516533765">"Informace o tabletu"</string>
-    <string name="about_settings" product="default" msgid="1743378368185371685">"Info o telefonu"</string>
+    <string name="about_settings" product="default" msgid="1743378368185371685">"Informace o telefonu"</string>
     <string name="about_settings_summary" msgid="3371517697156165959">"Zobrazí právní informace, stav a verzi softwaru"</string>
     <string name="legal_information" msgid="5769301644270604095">"Právní informace"</string>
     <string name="contributors_title" msgid="5917703088825286504">"Přispěvatelé"</string>
@@ -1262,7 +1268,7 @@
     <string name="user_dict_settings_more_languages" msgid="7316375944684977910">"Další jazyky..."</string>
     <string name="testing" msgid="6584352735303604146">"Testování"</string>
     <string name="testing_phone_info" product="tablet" msgid="193561832258534798">"Informace o tabletu"</string>
-    <string name="testing_phone_info" product="default" msgid="8656693364332840056">"Info o telefonu"</string>
+    <string name="testing_phone_info" product="default" msgid="8656693364332840056">"Informace o telefonu"</string>
     <string name="testing_battery_info" msgid="3497865525976497848">"Info o baterii"</string>
     <string name="quick_launch_title" msgid="7904609846945905306">"Rychlé spuštění"</string>
     <string name="quick_launch_summary" msgid="8101133819188001190">"Umožňuje nastavit klávesové zkratky pro spouštění aplikací"</string>
@@ -1315,7 +1321,7 @@
     <string name="dev_settings_warning_title" msgid="7244607768088540165">"Povolit nastavení pro vývojáře?"</string>
     <string name="dev_settings_warning_message" msgid="2298337781139097964">"Tato nastavení jsou určena pouze pro vývojáře. Mohou způsobit rozbití nebo nesprávné fungování zařízení a nainstalovaných aplikací."</string>
     <string name="verify_apps_over_usb_title" msgid="4177086489869041953">"Ověřit aplikace instal. přes USB"</string>
-    <string name="verify_apps_over_usb_summary" msgid="9164096969924529200">"Kontrolovat škodlivost aplikací nainstalovaných pomocí nástroje ADB/ADT."</string>
+    <string name="verify_apps_over_usb_summary" msgid="9164096969924529200">"Kontrolovat škodlivost aplikací nainstalovaných pomocí nástroje ADB/ADT"</string>
     <string name="enforce_read_external_title" product="nosdcard" msgid="7733257271454664956">"Chránit úložiště USB"</string>
     <string name="enforce_read_external_summary" product="nosdcard" msgid="1798088409346660567">"Aplikace musejí před čtením z úložiště USB žádat o povolení"</string>
     <string name="enforce_read_external_confirm_title" product="nosdcard" msgid="2112813067171502209">"Chránit úložiště USB?"</string>
@@ -1355,12 +1361,38 @@
     <string name="accessibility_toggle_screen_magnification_preference_title" msgid="2472285215737820469">"Přiblížení obrazovky"</string>
     <string name="accessibility_toggle_screen_magnification_auto_update_preference_title" msgid="7218498768415430963">"Automaticky aktualizovat přiblížení"</string>
     <string name="accessibility_toggle_screen_magnification_auto_update_preference_summary" msgid="4392059334816220155">"Aktual. přiblížení obrazovky při přepnutí aplikací"</string>
-    <string name="accessibility_power_button_ends_call_prerefence_title" msgid="6673851944175874235">"Tlač. Napájení ukončí hovor"</string>
+    <string name="accessibility_power_button_ends_call_prerefence_title" msgid="6673851944175874235">"Tlač. napájení ukončí hovor"</string>
     <string name="accessibility_toggle_speak_password_preference_title" msgid="5986628515113204844">"Vyslovovat hesla"</string>
     <string name="accessibility_long_press_timeout_preference_title" msgid="6708467774619266508">"Prodleva dotyku a podržení"</string>
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Nastavení"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Zapnuto"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Vypnuto"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Náhled"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Standardní možnosti"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Jazyk"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Velikost textu"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Styl popisku"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Vlastní možnosti"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Barva pozadí"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Neprůhlednost pozadí"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Barva textu"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Neprůhlednost textu"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Barva okraje"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Typ okraje"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Rodina písem"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"Popisek bude vypadat takto"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Výchozí"</string>
+    <string name="color_none" msgid="3475640044925814795">"Žádná"</string>
+    <string name="color_white" msgid="8045195170201590239">"Bílá"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Šedá"</string>
+    <string name="color_black" msgid="7517353520909872561">"Černá"</string>
+    <string name="color_red" msgid="4949354900304125428">"Červená"</string>
+    <string name="color_green" msgid="5537717328428845841">"Zelená"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Modrá"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Tyrkysová"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Žlutá"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Purpurová"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Použít službu <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> potřebuje:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Sledovat vlastní akce"</string>
@@ -1458,6 +1490,29 @@
     <string name="menu_stats_refresh" msgid="1676215433344981075">"Aktualizovat"</string>
     <string name="process_kernel_label" msgid="3916858646836739323">"OS Android"</string>
     <string name="process_mediaserver_label" msgid="6500382062945689285">"Mediaserver"</string>
+    <string name="process_stats_summary_title" msgid="1144688045609771677">"Statistiky procesů"</string>
+    <string name="process_stats_summary" msgid="109387941605607762">"Podrobné statistiky běžících procesů"</string>
+    <string name="app_memory_use" msgid="7849258480392171939">"Využití paměti"</string>
+    <string name="process_stats_total_duration" msgid="1869761515101180444">"Aplikace <xliff:g id="TYPE">%1$s</xliff:g> přes <xliff:g id="TIME">%2$s</xliff:g>"</string>
+    <string name="process_stats_type_background" msgid="3934992858120683459">"na pozadí"</string>
+    <string name="process_stats_type_foreground" msgid="7713118254089580536">"v popředí"</string>
+    <string name="process_stats_type_cached" msgid="6314925846944806511">"v mezipaměti"</string>
+    <string name="process_stats_memory_status" msgid="4251599550196193093">"Aktuální stav paměti zařízení: <xliff:g id="MEMSTATE">%1$s</xliff:g>"</string>
+    <string name="process_stats_avg_ram_use" msgid="6972943528929394396">"Průměrné využití paměti RAM"</string>
+    <string name="process_stats_max_ram_use" msgid="3273876448926689261">"Minimální využití paměti RAM"</string>
+    <string name="process_stats_run_time" msgid="6520628955709369115">"Doba běhu"</string>
+    <string name="services_subtitle" msgid="4296402367067266425">"Služby"</string>
+    <string name="menu_proc_stats_duration" msgid="2323483592994720196">"Doba trvání"</string>
+    <string name="menu_duration_3h" msgid="4714866438374738385">"3 hodiny"</string>
+    <string name="menu_duration_6h" msgid="1940846763432184132">"6 hodin"</string>
+    <string name="menu_duration_12h" msgid="7890465404584356294">"12 hodin"</string>
+    <string name="menu_duration_1d" msgid="3393631127622285458">"1 den"</string>
+    <string name="menu_show_system" msgid="8864603400415567635">"Zobrazit systém"</string>
+    <string name="menu_use_uss" msgid="467765290771543089">"Použít USS"</string>
+    <string name="menu_proc_stats_type" msgid="4700209061072120948">"Typ statistik"</string>
+    <string name="menu_proc_stats_type_background" msgid="2236161340134898852">"Pozadí"</string>
+    <string name="menu_proc_stats_type_foreground" msgid="2286182659954958586">"Na popředí"</string>
+    <string name="menu_proc_stats_type_cached" msgid="5084272779786820693">"V mezipaměti"</string>
     <string name="voice_input_output_settings" msgid="1336135218350444783">"Hlasový vstup a výstup"</string>
     <string name="voice_input_output_settings_title" msgid="2442850635048676991">"Nastavení hlasového vstupu a výstupu"</string>
     <string name="voice_search_settings_title" msgid="2775469246913196536">"Hlasové vyhledávání"</string>
@@ -1531,7 +1586,7 @@
     <string name="credentials_install_summary" product="nosdcard" msgid="4220422806818210676">"Nainstalovat certifikáty z úložiště"</string>
     <string name="credentials_install_summary" product="default" msgid="5737658257407822713">"Nainstalovat certifikáty z karty SD"</string>
     <string name="credentials_reset" msgid="3239382277144980418">"Vymazat pověření"</string>
-    <string name="credentials_reset_summary" msgid="3369361230171260282">"Odebrat všechny certifikáty"</string>
+    <string name="credentials_reset_summary" msgid="3369361230171260282">"Odstranit všechny certifikáty"</string>
     <string name="trusted_credentials" msgid="4266945289534242402">"Důvěryhodná pověření"</string>
     <string name="trusted_credentials_summary" msgid="6735221351155686632">"Zobrazit důvěryhodné certifikáty CA"</string>
     <string name="credential_storage_type" msgid="8629968543494001364">"Typ úložiště"</string>
@@ -1829,7 +1884,7 @@
     <string name="trusted_credentials_user_tab" msgid="2244732111398939475">"Uživatel"</string>
     <string name="trusted_credentials_disable_label" msgid="3864493185845818506">"Zakázat"</string>
     <string name="trusted_credentials_enable_label" msgid="2498444573635146913">"Povolit"</string>
-    <string name="trusted_credentials_remove_label" msgid="3633691709300260836">"Odebrat"</string>
+    <string name="trusted_credentials_remove_label" msgid="3633691709300260836">"Odstranit"</string>
     <string name="trusted_credentials_enable_confirmation" msgid="83215982842660869">"Povolit certifikát CA systému?"</string>
     <string name="trusted_credentials_disable_confirmation" msgid="8199697813361646792">"Zakázat certifikát CA systému?"</string>
     <string name="trusted_credentials_remove_confirmation" msgid="443561923016852941">"Natrvalo odstranit uživatelský certifikát CA?"</string>

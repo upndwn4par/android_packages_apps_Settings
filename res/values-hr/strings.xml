@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Opcije…"</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Napredno"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Napredni Bluetooth"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Da biste vidjeli uređaje, uključite Bluetooth."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Kada je Bluetooth uključen, uređaj može komunicirati s ostalim Bluetooth uređajima u blizini."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Poveži se na..."</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Medijski zvuk"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Zvuk telefona"</string>
@@ -979,7 +979,11 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> će biti oslobođen."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Pomoć"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Mobilne mreže"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Upravljanje mobilnim paketom"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Mobilni paket"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Zadana aplikacija za SMS"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Želite li promijeniti aplikaciju za SMS?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Želite li upotrijebiti aplikaciju <xliff:g id="NEW_APP">%1$s</xliff:g> umjesto aplikacije <xliff:g id="CURRENT_APP">%2$s</xliff:g> kao svoju aplikaciju za SMS?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Želite li upotrijebiti aplikaciju <xliff:g id="NEW_APP">%s</xliff:g> kao svoju aplikaciju za SMS?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Nepoznati SIM operater"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"%1$s nema poznatu web-lokaciju za niz usluga"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Umetnite SIM karticu i pokrenite ponovo"</string>
@@ -1361,6 +1365,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Postavke"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Uključeno"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Isključeno"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Pregled"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Standardne opcije"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Jezik"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Veličina teksta"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Stil opisa"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Prilagođene opcije"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Boja pozadine"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Zasjenjenost pozadine"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Boja teksta"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Neprozirnost teksta"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Boja ruba"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Vrsta ruba"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Obitelj fonta"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"Opisi će izgledati ovako"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Zadano"</string>
+    <string name="color_none" msgid="3475640044925814795">"Ništa"</string>
+    <string name="color_white" msgid="8045195170201590239">"Bijela"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Siva"</string>
+    <string name="color_black" msgid="7517353520909872561">"Crna"</string>
+    <string name="color_red" msgid="4949354900304125428">"Crvena"</string>
+    <string name="color_green" msgid="5537717328428845841">"Zelena"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Plava"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Cijan"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Žuta"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Grimizna"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Želite li upotrijebiti uslugu <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> treba obavljati sljedeće:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Praćenje vaših radnji"</string>
@@ -1441,7 +1471,7 @@
     <string name="battery_desc_radio" msgid="5479196477223185367">"Baterija iskorištena upotrebom radija"</string>
     <string name="battery_sugg_radio" msgid="8211336978326295047">"Prebacite se na način rada u zrakoplovu u područjima loše pokrivenosti signalom da biste uštedjeli energiju"</string>
     <string name="battery_desc_display" msgid="5432795282958076557">"Baterija se koristi za prikaz i pozadinsko svjetlo"</string>
-    <string name="battery_sugg_display" msgid="3370202402045141760">"Smanjite svjetlinu i/ili privremeni prekid zaslona"</string>
+    <string name="battery_sugg_display" msgid="3370202402045141760">"Smanjite svjetlinu i/ili vrijeme čekanja zaslona"</string>
     <string name="battery_desc_wifi" msgid="2375567464707394131">"Baterijom se služi Wi-Fi"</string>
     <string name="battery_sugg_wifi" msgid="3355461362094706957">"Isključi Wi-Fi ako se ne upotrebljava ili ako nije dostupan"</string>
     <string name="battery_desc_bluetooth" msgid="8069070756186680367">"Baterija iskorištena upotrebom značajke Bluetooth"</string>

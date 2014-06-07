@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Opções..."</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Avançadas"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"Bluetooth Avançado"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Para ver os aparelhos, ligue o Bluetooth."</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Quando o Bluetooth está ativado, o disp. pode comunicar com outros disp. Bluetooth próximos."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Ligar a..."</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Áudio de multimédia"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Áudio do telemóvel"</string>
@@ -979,7 +979,11 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> será desligado."</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Ajuda"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Redes móveis"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Gerir tarifário de telemóvel"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Plano de telemóvel"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Aplicação de SMS predefinida"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Alterar aplicação de SMS?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Utilizar <xliff:g id="NEW_APP">%1$s</xliff:g> em vez de <xliff:g id="CURRENT_APP">%2$s</xliff:g> como a aplicação de SMS predefinida?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Utilizar <xliff:g id="NEW_APP">%s</xliff:g> como a aplicação de SMS predefinida?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"Operador de cartão SIM desconhecido"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"A %1$s não possui um Website de gestão conhecido"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Insira o cartão SIM e reinicie"</string>
@@ -1297,16 +1301,18 @@
     <string name="development_settings_not_available" msgid="4308569041701535607">"As opções de programador não estão disponíveis para este utilizador"</string>
     <string name="enable_adb" msgid="7982306934419797485">"Depuração USB"</string>
     <string name="enable_adb_summary" msgid="4881186971746056635">"Modo de depuração com USB ligado"</string>
-    <string name="clear_adb_keys" msgid="4038889221503122743">"Revogar autorizações de depuração USB"</string>
+    <string name="clear_adb_keys" msgid="4038889221503122743">"Revogar autorizações de depur. USB"</string>
     <string name="bugreport_in_power" msgid="4548816486587403971">"Relatórios de erros do menu avançado"</string>
     <string name="bugreport_in_power_summary" msgid="5764234382355067053">"Incluir opção no menu avançado para criar um relatório de erros"</string>
     <string name="keep_screen_on" msgid="1146389631208760344">"Manter ativo"</string>
     <string name="keep_screen_on_summary" msgid="2173114350754293009">"O ecrã nunca entrará em suspensão durante o carregamento"</string>
-    <string name="bt_hci_snoop_log" msgid="3340699311158865670">"Ativar registo de monitorização Bluetooth HCI"</string>
+    <string name="bt_hci_snoop_log" msgid="3340699311158865670">"Ativar registo de monit. Bluetooth HCI"</string>
     <string name="bt_hci_snoop_log_summary" msgid="730247028210113851">"Capturar todos os pacotes Bluetooth HCI num ficheiro"</string>
     <string name="select_runtime_title" msgid="649783802363155346">"Selecionar tempo exec."</string>
     <string name="select_runtime_dialog_title" msgid="5314872813037493958">"Selecionar tempo exec."</string>
     <string name="select_runtime_warning_message" msgid="1937574953265648165">"Reiniciar para alterar o tempo de execução de <xliff:g id="OLD">%1$s</xliff:g> para <xliff:g id="NEW">%2$s</xliff:g>?"</string>
+    <string name="wifi_display_certification" msgid="8611569543791307533">"Certificação de display sem fios"</string>
+    <string name="wifi_display_certification_summary" msgid="1155182309166746973">"Mostrar opções da certificação de display sem fios"</string>
     <string name="allow_mock_location" msgid="2787962564578664888">"Permitir locais fictícios"</string>
     <string name="allow_mock_location_summary" msgid="317615105156345626">"Permitir locais fictícios"</string>
     <string name="adb_warning_title" msgid="6234463310896563253">"Permitir depuração USB?"</string>
@@ -1361,6 +1367,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Configurações"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Ativado"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Desativado"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Pré-visualizar"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Opções padrão"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Idioma"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Tamanho do texto"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Estilo das legendas"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Opções personalizadas"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Cor de fundo"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Opacidade do fundo"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Cor do texto"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"Opacidade do texto"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Cor do limite"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Tipo de limite"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"Família de tipos de letra"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"As legendas terão este aspeto"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Predefinição"</string>
+    <string name="color_none" msgid="3475640044925814795">"Nenhuma"</string>
+    <string name="color_white" msgid="8045195170201590239">"Branco"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Cinzento"</string>
+    <string name="color_black" msgid="7517353520909872561">"Preto"</string>
+    <string name="color_red" msgid="4949354900304125428">"Vermelho"</string>
+    <string name="color_green" msgid="5537717328428845841">"Verde"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Azul"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"Azul-turquesa"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Amarelo"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"Magenta"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Utilizar <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> necessita de:"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Observar as suas ações"</string>
@@ -1372,9 +1404,8 @@
     <string name="accessibility_service_no_apps_message" msgid="7751662416377046539">"O TalkBack fornece respostas faladas para ajudar os utilizadores invisuais e com deficiência visual. Pretende instalá-lo gratuitamente a partir do Android Market?"</string>
     <string name="accessibility_service_default_description" msgid="1072730037861494125">"Nenhuma descrição fornecida."</string>
     <string name="settings_button" msgid="3006713718908152930">"Definições"</string>
-    <string name="print_settings" msgid="4742428530112487843">"Imprimir"</string>
-    <string name="print_settings_title" msgid="4911263339115736689">"Definições de impressão"</string>
-    <string name="print_services_title" msgid="1088097751249445946">"Serviços"</string>
+    <string name="print_settings" msgid="4742428530112487843">"Impressão"</string>
+    <string name="print_settings_title" msgid="3685449667822217816">"Serviços de impressão"</string>
     <string name="print_service_security_warning_title" msgid="2338435517408144841">"Utilizar <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="print_service_security_warning_summary" msgid="919299459931111450">"<xliff:g id="PRINT_SERVICE_NAME">%1$s</xliff:g> pode receber documentos impressos. Tais documentos podem conter dados confidenciais."</string>
     <string name="print_no_services_installed" msgid="8443039625463872294">"Nenhum serviço instalado"</string>
@@ -1563,7 +1594,7 @@
     <string name="backup_configure_account_default_summary" msgid="2436933224764745553">"Actualmente, nenhuma conta está a armazenar dados com cópia de segurança"</string>
     <string name="auto_restore_title" msgid="5397528966329126506">"Restauro automático"</string>
     <string name="auto_restore_summary" msgid="4235615056371993807">"Ao reinstalar uma aplicação, restaurar definições e dados da cópia de segurança"</string>
-    <string name="local_backup_password_title" msgid="3860471654439418822">"Pal.-passe cópia do comp"</string>
+    <string name="local_backup_password_title" msgid="3860471654439418822">"Palavra-passe cópia do comp."</string>
     <string name="local_backup_password_summary_none" msgid="393503434408227110">"As cópias de segurança completas no ambiente de trabalho não estão atualmente protegidas"</string>
     <string name="local_backup_password_summary_change" msgid="2731163425081172638">"Toque para alterar ou remover a palavra-passe para cópias de segurança completas no ambiente de trabalho"</string>
     <string name="local_backup_password_toast_success" msgid="582016086228434290">"Nova palavra-passe da cópia de segurança definida"</string>

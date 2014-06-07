@@ -466,7 +466,7 @@
     <string name="bluetooth_device_context_connect_advanced" msgid="2643129703569788771">"Okukhethwayo..."</string>
     <string name="bluetooth_menu_advanced" msgid="8572178316357220524">"Okuthuthukisiwe"</string>
     <string name="bluetooth_advanced_titlebar" msgid="2142159726881547669">"i-Bluetooth ephambili"</string>
-    <string name="bluetooth_empty_list_bluetooth_off" msgid="4793562956642282639">"Ukubona amadivayisi, vula i-Bluetooth"</string>
+    <string name="bluetooth_empty_list_bluetooth_off" msgid="6351930724051893423">"Uma i-Bluetooth ivuliwe, idivayisi yakho ingakwazi ukuxhumana namanye amadivayisi aseduze we-Bluetooth."</string>
     <string name="bluetooth_connect_specific_profiles_title" msgid="6952214406025825164">"Xhuma kwi..."</string>
     <string name="bluetooth_profile_a2dp" msgid="2031475486179830674">"Umsindo wemidiya"</string>
     <string name="bluetooth_profile_headset" msgid="8658779596261212609">"Umsindo wefoni"</string>
@@ -980,12 +980,31 @@
     <string name="bluetooth_untether_blank" msgid="2871192409329334813">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> ngeke kusebenziswe ifoni njengemodemu"</string>
     <string name="tethering_help_button_text" msgid="656117495547173630">"Usizo"</string>
     <string name="network_settings_title" msgid="7967552516440151852">"Amanethiwekhi eselula"</string>
-    <string name="manage_mobile_plan_title" msgid="7588182101738043593">"Phatha uhlelo lweselula"</string>
+    <string name="manage_mobile_plan_title" msgid="7630170375010107744">"Uhlelo lweselula"</string>
+    <string name="sms_application_title" msgid="6134351177937015839">"Uhlelo lokusebenza oluzenzakalelayo le-SMS"</string>
+    <string name="sms_change_default_dialog_title" msgid="1958688831875804286">"Shintsha uhlelo lokusebenza le-SMS?"</string>
+    <string name="sms_change_default_dialog_text" msgid="1522783933230274787">"Sebenzisa i-<xliff:g id="NEW_APP">%1$s</xliff:g> kunokusebenzisa i-<xliff:g id="CURRENT_APP">%2$s</xliff:g> njengohlelo lwakho lokusebenza le-SMS?"</string>
+    <string name="sms_change_default_no_previous_dialog_text" msgid="602683880284921998">"Sebenzisa i-<xliff:g id="NEW_APP">%s</xliff:g> njengohlelo lwakho lokusebenza le-SMS?"</string>
     <string name="mobile_unknown_sim_operator" msgid="9101230468757324260">"I-Opharetha ye-SIM engaziwa"</string>
     <string name="mobile_no_provisioning_url" msgid="2399426808423775711">"%1$s ayinayo iwebhusayithi eyilungiselelo eyaziwayo"</string>
     <string name="mobile_insert_sim_card" msgid="9052590985784056395">"Sicela ufake ikhadi le-SIM bese uqala kabusha"</string>
     <string name="mobile_connect_to_internet" msgid="1733894125065249639">"Sicela uxhume ku-inthanethi"</string>
     <string name="location_title" msgid="1029961368397484576">"Indawo Yami"</string>
+    <string name="location_mode_title" msgid="3982009713118421689">"Imodi"</string>
+    <string name="location_mode_high_accuracy_title" msgid="8241802585110932849">"Ukunemba okuphezulu"</string>
+    <string name="location_mode_battery_saving_title" msgid="711273645208158637">"Ukulondolozwa kwebhetri"</string>
+    <string name="location_mode_sensors_only_title" msgid="3040366132175435160">"Idivayisi kuphela"</string>
+    <string name="location_mode_location_off_title" msgid="2829713015012529465">"Indawo ivaliwe"</string>
+    <string name="location_category_recent_location_requests" msgid="1938721350424447421">"Izicelo zendawo zakamuva"</string>
+    <string name="location_no_recent_apps" msgid="2800907699722178041">"Azikho izinhlelo zokusebenza ezicele indawo kamuva nje"</string>
+    <string name="location_category_location_services" msgid="7437150886946685979">"Amasevisi wendawo"</string>
+    <string name="location_high_battery_use" msgid="517199943258508020">"Ukusebenzisa ibhetri okuphezulu"</string>
+    <string name="location_low_battery_use" msgid="8602232529541903596">"Ukusebenzisa ibhetri okuphansi"</string>
+    <string name="location_mode_screen_title" msgid="4528716772270246542">"Imodi yendawo"</string>
+    <string name="location_mode_high_accuracy_description" msgid="6418936349431602808">"Sebenzisa i-GPS, Wi‑Fi, namanethiwekhi weselula ukuthola indawo"</string>
+    <string name="location_mode_battery_saving_description" msgid="1728668969743485109">"Sebenzisa i-Wi‑Fi namanethiwekhi weselula ukuze uthole indawo"</string>
+    <string name="location_mode_sensors_only_description" msgid="7178415350457794366">"Sebenzisa i-GPS ukuze uthole indawo yakho"</string>
+    <string name="location_loading_injected_setting" msgid="4238574500081976654">"Iyathola…"</string>
     <string name="location_network_based" msgid="9134175479520582215">"I-Wi-Fi nendawo yenethiwekhi yeselula"</string>
     <string name="location_neighborhood_level" msgid="5626515380188353712">"Vumela izinhlelo zokusebenza zisebenzise isevisi yendawo yakwa-Google ukucabangela indawo yakho ngokushesha. Idatha yendawo engaziwa izoqoqwa futhi ithunyelwe kwa-Google."</string>
     <string name="location_neighborhood_level_wifi" msgid="4234820941954812210">"Indawo etholwe i-Wi-Fi"</string>
@@ -1368,6 +1387,32 @@
     <string name="accessibility_menu_item_settings" msgid="3344942964710773365">"Izilungiselelo"</string>
     <string name="accessibility_feature_state_on" msgid="2864292320042673806">"Vuliwe"</string>
     <string name="accessibility_feature_state_off" msgid="4172584906487070211">"Kucishile"</string>
+    <string name="captioning_preview_title" msgid="1234015253497016890">"Buka kuqala"</string>
+    <string name="captioning_standard_options_title" msgid="3284211791180335844">"Izinketho ezijwayelekile"</string>
+    <string name="captioning_locale" msgid="4559155661018823503">"Ulimi"</string>
+    <string name="captioning_text_size" msgid="6737002449104466028">"Usayizi wombhalo"</string>
+    <string name="captioning_preset" msgid="8939737196538429044">"Isitayela segama-ngcazo"</string>
+    <string name="captioning_custom_options_title" msgid="5067500939930322405">"Izinketho ezingokwezifiso"</string>
+    <string name="captioning_background_color" msgid="9053011212948992570">"Umbala ongemuva"</string>
+    <string name="captioning_background_opacity" msgid="6029993616419971202">"Ukufiphala kwangemuva"</string>
+    <string name="captioning_foreground_color" msgid="85623486537640059">"Umbala wombhalo"</string>
+    <string name="captioning_foreground_opacity" msgid="4370967856995419788">"I-Opacity yombhalo"</string>
+    <string name="captioning_edge_color" msgid="3670094753735263238">"Umbala wonqenqema"</string>
+    <string name="captioning_edge_type" msgid="5997247394951682154">"Uhlobo lonqenqema"</string>
+    <string name="captioning_typeface" msgid="1826169240566563259">"I-Font Family"</string>
+    <string name="captioning_preview_text" msgid="4067935959797375065">"Amazwibela azobukeka ngale ndlela"</string>
+    <string name="captioning_preview_characters" msgid="7105909138497851769">"Aa"</string>
+    <string name="locale_default" msgid="2593883646136326969">"Okuzenzakalelayo"</string>
+    <string name="color_none" msgid="3475640044925814795">"Lutho"</string>
+    <string name="color_white" msgid="8045195170201590239">"Okumhlophe"</string>
+    <string name="color_gray" msgid="9192312087142726313">"Okumpunga"</string>
+    <string name="color_black" msgid="7517353520909872561">"Okumnyama"</string>
+    <string name="color_red" msgid="4949354900304125428">"Okubomvu"</string>
+    <string name="color_green" msgid="5537717328428845841">"Okuluhlaza okotshani"</string>
+    <string name="color_blue" msgid="7731984529016953223">"Okuluhlaza okwesibhakabhaka"</string>
+    <string name="color_cyan" msgid="7033027180641173211">"I-Cyan"</string>
+    <string name="color_yellow" msgid="9112680561610873529">"Okuliphuzi"</string>
+    <string name="color_magenta" msgid="5059212823607815549">"I-Magenta"</string>
     <string name="enable_service_title" msgid="3061307612673835592">"Sebenzisa i-<xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
     <string name="capabilities_list_title" msgid="86713361724771971">"<xliff:g id="SERVICE">%1$s</xliff:g> idinga :"</string>
     <string name="capability_title_receiveAccessibilityEvents" msgid="1869032063969970755">"Qapha izenzo zakho"</string>
