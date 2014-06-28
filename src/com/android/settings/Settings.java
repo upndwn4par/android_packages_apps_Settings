@@ -96,6 +96,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.graviton.LockscreenSettings;
 import com.android.settings.graviton.PowermenuSettings;
 import com.android.settings.graviton.StatusbarSettings;
+import com.android.settings.graviton.ThemeSettings;
 import com.android.settings.graviton.MiscSettings;
 
 
@@ -168,6 +169,7 @@ public class Settings extends PreferenceActivity
             R.id.lockscreen_settings,
             R.id.powermenu_settings,
             R.id.statusbar_settings,
+	    R.id.theme_settings,
             R.id.misc_settings
     };
 
@@ -364,6 +366,7 @@ public class Settings extends PreferenceActivity
         LockscreenSettings.class.getName(),
         PowermenuSettings.class.getName(),
         StatusbarSettings.class.getName(),
+	ThemeSettings.class.getName(),
         MiscSettings.class.getName()
     };
 
@@ -1146,5 +1149,6 @@ public class Settings extends PreferenceActivity
     public static class LockscreenSettingsActivity extends Settings { /* empty */ }
     public static class PowermenuSettingsActivity extends Settings { /* empty */ }
     public static class StatusbarSettingsActivity extends Settings { /* empty */ }
+    public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class MiscSettingsActivity extends Settings { /* empty */ }
 }

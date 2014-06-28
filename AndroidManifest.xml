@@ -581,7 +581,7 @@
                 android:resource="@id/sound_settings" />
         </activity>
 
-        <!-- Graviton. -->
+        <!-- Start Graviton. -->
 
         <activity android:name="Settings$LockscreenSettingsActivity"
                 android:label="@string/lock_screen_title"
@@ -628,6 +628,21 @@
                 android:resource="@id/statusbar_settings" />
         </activity>
 
+        <activity android:name="Settings$ThemeSettingsActivity"
+                android:label="@string/theme_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.graviton.ThemeSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/theme_settings" />
+        </activity>
+
         <activity android:name="Settings$MiscSettingsActivity"
                 android:label="@string/misc_settings_title"
                 android:taskAffinity=""
@@ -642,6 +657,8 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/misc_settings" />
         </activity>
+
+        <!-- End Graviton. -->
 
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="SoundSettings"
