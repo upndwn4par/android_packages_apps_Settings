@@ -110,7 +110,7 @@
         android:title="@string/theme_settings_title"
         android:breadCrumbTitle="@string/theme_settings_title"
         android:fragment="com.android.settings.graviton.ThemeSettings"
-        android:icon="@drawable/prd_ic_themepacks" />
+        android:icon="@drawable/ic_settings_themes" />
 
     <!-- Misc -->
     <header
