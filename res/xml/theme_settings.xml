@@ -60,6 +60,15 @@
         </intent>
     </Preference>
 
+    <!-- Wallpaper -->
+    <Preference
+        android:key="wallpaper_settings"
+        android:title="@string/wallpaper_settings_title_cm"
+        android:icon="@drawable/prd_ic_wallpapers">
+        <intent android:targetPackage="com.android.wallpapercropper"
+                android:targetClass="com.android.wallpapercropper.WallpaperPickerActivity" />
+    </Preference>
+
     <!-- Boot Animations -->
     <Preference
         android:key="bootanim_settings"
