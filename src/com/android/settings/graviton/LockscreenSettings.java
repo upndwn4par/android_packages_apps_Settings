@@ -26,16 +26,22 @@ import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.pm.UserInfo;
+import android.database.ContentObserver;
 import android.hardware.Camera;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.os.UserManager;
@@ -62,11 +68,29 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
     public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
     private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
     private static final String KEY_PEEK = "notification_peek";
+    private static final String PEEK_APPLICATION = "com.jedga.peek";
 
     private CheckBoxPreference mVolumeWakeScreen;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mNotificationPeek;
 
+    private PackageStatusReceiver mPackageStatusReceiver;
+    private IntentFilter mIntentFilter;
+
+
+    private boolean isPeekAppInstalled() {
+	return isPackageInstalled(PEEK_APPLICATION);
+    }
+
+    private boolean isPackageInstalled(String packagename) {
+	PackageManager pm = getActivity().getPackageManager();
+	try {
+	    pm.getPackageInfo(packagename, PackageManager.GET_ACTIVITIES);
+	    return true;
+	} catch (NameNotFoundException e) {
+	    return false;
+	}
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,13 +111,50 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	mSeeThrough.setOnPreferenceChangeListener(this);
 
 	mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
-	mNotificationPeek.setChecked(Settings.System.getInt(getContentResolver(),
-		Settings.System.PEEK_STATE, 0) == 1);
-	mNotificationPeek.setOnPreferenceChangeListener(this);
+	mNotificationPeek.setPersistent(false);
+
+        if (mPackageStatusReceiver == null) {
+            mPackageStatusReceiver = new PackageStatusReceiver();
+        }
+        if (mIntentFilter == null) {
+            mIntentFilter = new IntentFilter();
+            mIntentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+            mIntentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+        }
+        getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
+
+        updateState();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().unregisterReceiver(mPackageStatusReceiver);
+    }
+
+    private void updateState() {
+        updatePeekCheckbox();
+    }
+
+    private void updatePeekCheckbox() {
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.PEEK_STATE, 0) == 1;
+        mNotificationPeek.setChecked(enabled && !isPeekAppInstalled());
+        mNotificationPeek.setEnabled(!isPeekAppInstalled());
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mNotificationPeek) {
+            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
+                    mNotificationPeek.isChecked() ? 1 : 0);
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -107,13 +168,21 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
-	} else if (preference == mNotificationPeek) {
-	    boolean newValue = (Boolean) value;
-	    Settings.System.putInt(getContentResolver(),
-			Settings.System.PEEK_STATE, newValue ? 1 : 0);
         } else {
             return false;
         }
         return true;
+    }
+
+    public class PackageStatusReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals(Intent.ACTION_PACKAGE_ADDED)) {
+                updatePeekCheckbox();
+            } else if(action.equals(Intent.ACTION_PACKAGE_REMOVED)) {
+                updatePeekCheckbox();
+            }
+        }
     }
 }
