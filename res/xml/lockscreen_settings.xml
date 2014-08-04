@@ -57,4 +57,9 @@
 	    android:title="@string/volume_wake_screen_title"
 	    android:summary="@string/volume_wake_screen_summary" />
 
+	<CheckBoxPreference
+	    android:key="allow_all_lockscreen_widgets"
+	    android:title="@string/lockscreen_allow_all_title"
+	    android:summary="@string/lockscreen_allow_all_summary" />
+
 </PreferenceScreen>

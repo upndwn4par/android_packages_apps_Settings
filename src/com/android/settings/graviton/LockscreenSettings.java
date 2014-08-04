@@ -69,10 +69,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
     private static final String KEY_SEE_THROUGH = "lockscreen_see_through";
     private static final String KEY_PEEK = "notification_peek";
     private static final String PEEK_APPLICATION = "com.jedga.peek";
+    private static final String ALLOW_ALL_LOCKSCREEN_WIDGETS = "allow_all_lockscreen_widgets";
 
     private CheckBoxPreference mVolumeWakeScreen;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mNotificationPeek;
+    private CheckBoxPreference mAllWidgets;
 
     private PackageStatusReceiver mPackageStatusReceiver;
     private IntentFilter mIntentFilter;
@@ -109,6 +111,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
 		Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
 	mSeeThrough.setOnPreferenceChangeListener(this);
+
+	mAllWidgets = (CheckBoxPreference) findPreference(ALLOW_ALL_LOCKSCREEN_WIDGETS);
+	mAllWidgets.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.ALLOW_ALL_LOCKSCREEN_WIDGETS, 0) == 1);
+	mAllWidgets.setOnPreferenceChangeListener(this);
 
 	mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
 	mNotificationPeek.setPersistent(false);
@@ -168,6 +175,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
+	} else if (preference == mAllWidgets) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.ALLOW_ALL_LOCKSCREEN_WIDGETS, newValue ? 1 : 0);
         } else {
             return false;
         }

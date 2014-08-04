@@ -376,4 +376,9 @@
     <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
+
+    <!-- Lockscreen widgets -->
+    <string name="lockscreen_allow_all_title">Widgets</string>
+    <string name="lockscreen_allow_all_summary">Add any widget to the lockscreen. Some widgets may not behave as expected. </string>
+
 </resources>
