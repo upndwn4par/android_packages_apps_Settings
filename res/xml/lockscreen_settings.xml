@@ -35,6 +35,11 @@
                     android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
         </PreferenceScreen>
 
+        <CheckBoxPreference
+            android:key="hover_disable_on_lockscreen"
+            android:title="@string/hover_disable_on_lockscreen_title"
+            android:summary="@string/hover_disable_on_lockscreen_summary" />
+
 	<PreferenceScreen
 	    android:key="lockscreen_notifications"
             android:title="@string/lockscreen_notifications"

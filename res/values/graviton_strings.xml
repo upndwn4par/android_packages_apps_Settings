@@ -313,7 +313,7 @@
 
     <!--Notification peek-->
     <string name="notification_peek_title">Notification peek</string>
-    <string name="notification_peek_summary">Show latest notification after picking up your device</string>
+    <string name="notification_peek_summary">Show latest notification after picking up your device.</string>
 
     <!--Custom carrier label-->
     <string name="notification_carrier_label_title">Carrier label</string>
@@ -380,5 +380,9 @@
     <!-- Lockscreen widgets -->
     <string name="lockscreen_allow_all_title">Widgets</string>
     <string name="lockscreen_allow_all_summary">Add any widget to the lockscreen. Some widgets may not behave as expected. </string>
+
+    <!-- Hover -->
+    <string name="hover_disable_on_lockscreen_title">Hover disable</string>
+    <string name="hover_disable_on_lockscreen_summary">Disable Hover notifications on lockscreen.</string>
 
 </resources>

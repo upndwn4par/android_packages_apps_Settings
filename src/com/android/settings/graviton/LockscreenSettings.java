@@ -70,11 +70,13 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
     private static final String KEY_PEEK = "notification_peek";
     private static final String PEEK_APPLICATION = "com.jedga.peek";
     private static final String ALLOW_ALL_LOCKSCREEN_WIDGETS = "allow_all_lockscreen_widgets";
+    private static final String HOVER_DISABLE_ON_LOCKSCREEN = "hover_disable_on_lockscreen";
 
     private CheckBoxPreference mVolumeWakeScreen;
     private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mNotificationPeek;
     private CheckBoxPreference mAllWidgets;
+    private CheckBoxPreference mHoverLockscreenDisable;
 
     private PackageStatusReceiver mPackageStatusReceiver;
     private IntentFilter mIntentFilter;
@@ -116,6 +118,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	mAllWidgets.setChecked(Settings.System.getInt(getContentResolver(),
 		Settings.System.ALLOW_ALL_LOCKSCREEN_WIDGETS, 0) == 1);
 	mAllWidgets.setOnPreferenceChangeListener(this);
+
+	mHoverLockscreenDisable = (CheckBoxPreference) findPreference(HOVER_DISABLE_ON_LOCKSCREEN);
+	mHoverLockscreenDisable.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.HOVER_DISABLE_ON_LOCKSCREEN, 0) == 1);
+	mHoverLockscreenDisable.setOnPreferenceChangeListener(this);
 
 	mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
 	mNotificationPeek.setPersistent(false);
@@ -179,6 +186,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 			Settings.System.ALLOW_ALL_LOCKSCREEN_WIDGETS, newValue ? 1 : 0);
+	} else if (preference == mHoverLockscreenDisable) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.HOVER_DISABLE_ON_LOCKSCREEN, newValue ? 1 : 0);
         } else {
             return false;
         }
