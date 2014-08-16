@@ -168,8 +168,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
         if (preference == mNotificationPeek) {
             Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
                     mNotificationPeek.isChecked() ? 1 : 0);
-	}
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+        return true;
     }
 
     @Override
@@ -177,19 +179,19 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements Pr
 	if (preference == mVolumeWakeScreen) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
-			Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
+		    Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
 	} else if (preference == mSeeThrough) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
-			Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
+		    Settings.System.LOCKSCREEN_SEE_THROUGH, newValue ? 1 : 0);
 	} else if (preference == mAllWidgets) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
-			Settings.System.ALLOW_ALL_LOCKSCREEN_WIDGETS, newValue ? 1 : 0);
+		    Settings.System.ALLOW_ALL_LOCKSCREEN_WIDGETS, newValue ? 1 : 0);
 	} else if (preference == mHoverLockscreenDisable) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
-			Settings.System.HOVER_DISABLE_ON_LOCKSCREEN, newValue ? 1 : 0);
+		    Settings.System.HOVER_DISABLE_ON_LOCKSCREEN, newValue ? 1 : 0);
         } else {
             return false;
         }

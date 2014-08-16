@@ -22,7 +22,7 @@
     <string name="graviton_settings_title" >Graviton</string>
 
     <!-- General strings -->
-     <string name="ok">OK</string>
+    <string name="ok">OK</string>
     <string name="reset">Reset</string>
     <string name="default_string">Default</string>
 
@@ -44,10 +44,6 @@
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="advanced_settings_title">Advanced</string>
-
-    <!--Lockscreen See Through-->
-    <string name="see_through_title">See through</string>
-    <string name="see_through_summary">Transparent (blurred) lockscreen wallpaper. Your data may be visible to those around you.</string>
 
     <!-- Lockscreen Notifications -->
     <!-- Categories -->
@@ -81,7 +77,7 @@
     <string name="privacy_mode">Privacy Mode</string>
     <string name="privacy_mode_summary">Disables notifications from being shown and dismissed. This way, you just see the icons of your notifications.</string>
 
-    <!-- Lockscreen see through -->
+    <!-- Lockscreen blur -->
     <string name="lockscreen_see_through_title">Blur</string>
     <string name="lockscreen_see_through_summary">Blurred lockscreen wallpaper. Warning: Your data may be visible to those around you.</string>
 
@@ -286,7 +282,7 @@
     <string name="quiet_hours_ringer_on">No ringer will be played</string>
     <string name="quiet_hours_ringer_off">Ringer will play like normal</string>
 
-    <!-- time range preference -->
+    <!-- Time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>
 

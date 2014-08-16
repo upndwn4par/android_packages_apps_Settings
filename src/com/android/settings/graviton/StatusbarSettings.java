@@ -116,7 +116,7 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements Pre
 
         if (preference == mStatusBarTraffic) {
             Settings.System.putInt(resolver,
-                    Settings.System.STATUS_BAR_TRAFFIC,
+            Settings.System.STATUS_BAR_TRAFFIC,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);

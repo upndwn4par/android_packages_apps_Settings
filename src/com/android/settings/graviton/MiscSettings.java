@@ -106,18 +106,18 @@ public class MiscSettings extends SettingsPreferenceFragment implements Preferen
         if (preference == mKillAppLongpressBack) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
-			Settings.System.KILL_APP_LONGPRESS_BACK, newValue ? 1 : 0);
-        return true;
+		    Settings.System.KILL_APP_LONGPRESS_BACK, newValue ? 1 : 0);
         } else if (preference == mRecentClearAll) {
             boolean newValue = (Boolean) value;
             Settings.System.putInt(getContentResolver(),
-			Settings.System.SHOW_CLEAR_RECENTS_BUTTON, newValue ? 1 : 0);
-        return true;
+		    Settings.System.SHOW_CLEAR_RECENTS_BUTTON, newValue ? 1 : 0);
         } else if (preference == mRecentClearAllPosition) {
             String newValue = (String) value;
             Settings.System.putString(getContentResolver(),
-			Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, newValue);
+		    Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, newValue);
+        } else {
+            return false;
         }
-        return false;
+        return true;
     }
 }

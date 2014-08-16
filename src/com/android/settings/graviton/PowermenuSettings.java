@@ -130,23 +130,23 @@ public class PowermenuSettings extends SettingsPreferenceFragment implements Pre
         if (preference == mScreenshotPowerMenu) {
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
-			Settings.System.SCREENSHOT_IN_POWER_MENU, newValue ? 1 : 0);
+		    Settings.System.SCREENSHOT_IN_POWER_MENU, newValue ? 1 : 0);
         } else if (preference == mScreenrecordPowerMenu) {
             boolean newValue = (Boolean) value;
             Settings.System.putInt(getContentResolver(),
-			Settings.System.SCREENRECORD_IN_POWER_MENU, newValue ? 1 : 0);
+		    Settings.System.SCREENRECORD_IN_POWER_MENU, newValue ? 1 : 0);
         } else if (preference == mMobileDataPowerMenu) {
             boolean newValue = (Boolean) value;
             Settings.System.putInt(getContentResolver(),
-			Settings.System.MOBILE_DATA_IN_POWER_MENU, newValue ? 1 : 0);
+		    Settings.System.MOBILE_DATA_IN_POWER_MENU, newValue ? 1 : 0);
         } else if (preference == mAirplaneModePowerMenu) {
             boolean newValue = (Boolean) value;
             Settings.System.putInt(getContentResolver(),
-			Settings.System.AIRPLANE_MODE_IN_POWER_MENU, newValue ? 1 : 0);
+		    Settings.System.AIRPLANE_MODE_IN_POWER_MENU, newValue ? 1 : 0);
         } else if (preference == mSoundTogglesPowerMenu) {
             boolean newValue = (Boolean) value;
             Settings.System.putInt(getContentResolver(),
-			Settings.System.SOUND_TOGGLES_IN_POWER_MENU, newValue ? 1 : 0);
+		    Settings.System.SOUND_TOGGLES_IN_POWER_MENU, newValue ? 1 : 0);
         } else {
             return false;
         }
