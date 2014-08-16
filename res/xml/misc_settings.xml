@@ -58,6 +58,11 @@
             android:fragment="com.android.settings.graviton.NavBarDimen"
             android:title="@string/navbar_dimen_title" />
 
+	<PreferenceScreen
+	    android:key="navigation_ring"
+	    android:fragment="com.android.settings.graviton.NavRing"
+	    android:title="@string/navigation_ring_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
