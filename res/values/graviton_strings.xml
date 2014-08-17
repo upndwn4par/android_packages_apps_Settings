@@ -422,6 +422,7 @@
     <string name="icon_picker_camera">Camera</string>
     <string name="icon_picker_chrome">Chrome</string>
     <string name="icon_picker_contacts">Contacts</string>
+    <string name="icon_picker_dolphin">Dolphin</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email Holo</string>
     <string name="icon_picker_facebook">Facebook</string>
@@ -441,6 +442,7 @@
     <string name="icon_picker_snapchat">Snapchat</string>
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
+    <string name="icon_picker_xda">xda</string>
     <string name="profile_applist_title">Apps</string>
     <string name="navring_action_last_app">Switch to last app</string>
 
