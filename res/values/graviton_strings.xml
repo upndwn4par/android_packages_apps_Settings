@@ -446,4 +446,8 @@
     <string name="profile_applist_title">Apps</string>
     <string name="navring_action_last_app">Switch to last app</string>
 
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Set a custom lockscreen wallpaper from the gallery.</string>
+
 </resources>
