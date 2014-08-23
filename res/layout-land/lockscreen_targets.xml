@@ -27,6 +27,7 @@
         android:orientation="horizontal"
         android:gravity="right|center_vertical"
         android:contentDescription="@*android:string/keyguard_accessibility_slide_area"
+        prvandroid:handleDrawable="@drawable/ic_lockscreen_handle_hint"
         prvandroid:outerRingDrawable="@*android:drawable/ic_lockscreen_outerring"
         prvandroid:outerRadius="@*android:dimen/glowpadview_target_placement_radius"
         prvandroid:innerRadius="@*android:dimen/glowpadview_inner_radius"
