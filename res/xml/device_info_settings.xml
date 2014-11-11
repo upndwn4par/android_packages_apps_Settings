@@ -102,6 +102,12 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
+
+        <!-- Lollipop Dream build version -->
+        <Preference android:key="lollipopdream_version" 
+                style="?android:preferenceInformationStyle"
+                android:title="@string/lollipopdream_version_title"
+                android:summary="@string/lollipopdream_version_default"/>
                 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
