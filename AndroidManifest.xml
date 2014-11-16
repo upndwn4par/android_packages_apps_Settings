@@ -126,6 +126,27 @@
             </intent-filter>
         </activity>
 
+        <!-- Lollipop Dream Start-->
+
+        <activity android:name="Settings$LollipopDreamSettingsActivity"
+                android:label="@string/lollipopdream_settings"
+                android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.HOME_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.lollipopdream.LollipopDreamSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/lollipopdream_settings" />
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+        </activity>
+
+        <!-- Lollipop Dream End -->
+
         <!-- Wireless Controls -->
 
         <activity android:name="Settings$WirelessSettingsActivity"

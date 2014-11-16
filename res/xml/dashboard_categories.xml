@@ -17,6 +17,25 @@
 <dashboard-categories
         xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Lollipop Dream section start-->
+
+    <dashboard-category
+            android:id="@+id/lollipopdream_section"
+            android:title="@string/header_category_lollipopdream" >
+
+
+        <!-- Lollipop Dream Settings-->
+        <dashboard-tile
+                android:id="@+id/lollipopdream_settings"
+                android:title="@string/lollipopdream_settings"
+                android:fragment="com.android.settings.lollipopdream.LollipopDreamSettings"
+                android:icon="@drawable/ic_settings_lollipopdream"
+                />
+
+    </dashboard-category>
+
+    <!-- Lollipop Dream section end-->
+
     <!-- WIRELESS and NETWORKS -->
     <dashboard-category
             android:id="@+id/wireless_section"
