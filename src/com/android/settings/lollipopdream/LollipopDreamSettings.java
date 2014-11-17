@@ -64,6 +64,10 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "LollipopDreamSettings";
     private ContentResolver resolver;
 
+    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+
+    private CheckBoxPreference mKillAppLongpressBack;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +75,11 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+	mKillAppLongpressBack = (CheckBoxPreference) findPreference(KILL_APP_LONGPRESS_BACK);
+	mKillAppLongpressBack.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
+	mKillAppLongpressBack.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -80,6 +89,13 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
+        if (preference == mKillAppLongpressBack) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+		    Settings.System.KILL_APP_LONGPRESS_BACK, newValue ? 1 : 0);
+        } else {
+            return false;
+        }
         return true;
     }
 }

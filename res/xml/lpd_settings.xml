@@ -26,6 +26,12 @@
         android:title="@string/title_general"
         android:key="general_category" >
 
+	<CheckBoxPreference
+	    android:key="kill_app_longpress_back"
+	    android:title="@string/kill_app_longpress_back_title"
+	    android:summary="@string/kill_app_longpress_back_summary"
+	    android:persistent="false" />
+
    </PreferenceCategory>
 
 </PreferenceScreen>
