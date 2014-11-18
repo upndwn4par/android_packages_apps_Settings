@@ -65,8 +65,10 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
     private ContentResolver resolver;
 
     private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
 
     private CheckBoxPreference mKillAppLongpressBack;
+    private CheckBoxPreference mVolumeWakeScreen;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,11 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 	mKillAppLongpressBack.setChecked(Settings.System.getInt(getContentResolver(),
 		Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
 	mKillAppLongpressBack.setOnPreferenceChangeListener(this);
+
+	mVolumeWakeScreen = (CheckBoxPreference) prefSet.findPreference(VOLUME_WAKE_SCREEN);
+	mVolumeWakeScreen.setChecked(Settings.System.getInt(resolver,
+		Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+	mVolumeWakeScreen.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -93,6 +100,10 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 		    Settings.System.KILL_APP_LONGPRESS_BACK, newValue ? 1 : 0);
+	} else if (preference == mVolumeWakeScreen) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+		    Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
         } else {
             return false;
         }
