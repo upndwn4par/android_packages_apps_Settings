@@ -35,4 +35,8 @@
     <string name="kill_app_longpress_back_title">Back button app kill</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back button</string>
 
+    <!-- Volume wake -->
+    <string name="volume_wake_screen_title">Volume wake</string>
+    <string name="volume_wake_screen_summary">Wake device with volume rocker when display is off.</string>
+
 </resources>

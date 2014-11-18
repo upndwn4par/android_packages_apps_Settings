@@ -32,6 +32,11 @@
 	    android:summary="@string/kill_app_longpress_back_summary"
 	    android:persistent="false" />
 
+	<CheckBoxPreference
+	    android:key="volume_wake_screen"
+	    android:title="@string/volume_wake_screen_title"
+	    android:summary="@string/volume_wake_screen_summary" />
+
    </PreferenceCategory>
 
 </PreferenceScreen>
