@@ -32,6 +32,11 @@
 	    android:summary="@string/kill_app_longpress_back_summary"
 	    android:persistent="false" />
 
+	<SwitchPreference
+	    android:key="lockscreen_quick_unlock_control"
+	    android:title="@string/lockscreen_quick_unlock_control_title"
+	    android:summary="@string/lockscreen_quick_unlock_control_summary" />
+
 	<CheckBoxPreference
 	    android:key="volume_wake_screen"
 	    android:title="@string/volume_wake_screen_title"

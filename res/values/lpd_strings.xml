@@ -39,4 +39,8 @@
     <string name="volume_wake_screen_title">Volume wake</string>
     <string name="volume_wake_screen_summary">Wake device with volume rocker when display is off.</string>
 
+    <!-- Quick unlock -->
+    <string name="lockscreen_quick_unlock_control_title">Quick unlock</string>
+    <string name="lockscreen_quick_unlock_control_summary">Unlock automatically when the correct password (not PIN) is entered</string>
+
 </resources>
