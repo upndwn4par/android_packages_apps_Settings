@@ -20,6 +20,7 @@ package com.android.settings;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
+import android.content.ContentResolver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -81,6 +82,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
     private static final String KEY_ADVANCED_SECURITY = "advanced_security";
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
+    private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CONFIRM_EXISTING_FOR_BIOMETRIC_WEAK_IMPROVE_REQUEST = 124;
@@ -125,6 +127,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private SwitchPreference mToggleAppInstallation;
     private DialogInterface mWarnInstallApps;
     private SwitchPreference mPowerButtonInstantlyLocks;
+    private SwitchPreference mQuickUnlockScreen;
 
     private boolean mIsPrimary;
 
@@ -309,6 +312,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
             root.findPreference(KEY_SCREEN_PINNING).setSummary(
                     getResources().getString(R.string.switch_on_text));
         }
+
+        // Quick unlock
+	mQuickUnlockScreen = (SwitchPreference) root.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+	if (mQuickUnlockScreen != null) {
+	mQuickUnlockScreen.setChecked(Settings.System.getInt(getContentResolver(),
+	Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
+	mQuickUnlockScreen.setOnPreferenceChangeListener(this);
+	}
 
         // Show password
         mShowPassword = (SwitchPreference) root.findPreference(KEY_SHOW_PASSWORD);
@@ -659,6 +670,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } else {
                 setNonMarketAppsAllowed(false);
             }
+        } else if (preference == mQuickUnlockScreen) {
+	    Settings.System.putInt(getContentResolver(),
+			Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, ((Boolean) value) ? 1 : 0);
         }
         return result;
     }

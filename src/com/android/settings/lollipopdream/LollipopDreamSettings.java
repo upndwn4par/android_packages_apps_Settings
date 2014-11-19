@@ -50,6 +50,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
@@ -66,9 +67,11 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 
     private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
+    private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
 
     private CheckBoxPreference mKillAppLongpressBack;
     private CheckBoxPreference mVolumeWakeScreen;
+    private SwitchPreference mQuickUnlockScreen;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,11 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 	mVolumeWakeScreen.setChecked(Settings.System.getInt(resolver,
 		Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
 	mVolumeWakeScreen.setOnPreferenceChangeListener(this);
+
+	mQuickUnlockScreen = (SwitchPreference) prefSet.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
+	mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
+		Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
+	mQuickUnlockScreen.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -104,6 +112,10 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 	    boolean newValue = (Boolean) value;
 	    Settings.System.putInt(getContentResolver(),
 		    Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
+	} else if (preference == mQuickUnlockScreen) {
+	    boolean newValue = (Boolean) value;
+	    Settings.System.putInt(getContentResolver(),
+		    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, newValue ? 1 : 0);
         } else {
             return false;
         }
