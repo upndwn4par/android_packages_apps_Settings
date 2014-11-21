@@ -69,8 +69,8 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
     public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
 
-    private CheckBoxPreference mKillAppLongpressBack;
-    private CheckBoxPreference mVolumeWakeScreen;
+    private SwitchPreference mKillAppLongpressBack;
+    private SwitchPreference mVolumeWakeScreen;
     private SwitchPreference mQuickUnlockScreen;
 
     @Override
@@ -81,12 +81,12 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-	mKillAppLongpressBack = (CheckBoxPreference) findPreference(KILL_APP_LONGPRESS_BACK);
+	mKillAppLongpressBack = (SwitchPreference) findPreference(KILL_APP_LONGPRESS_BACK);
 	mKillAppLongpressBack.setChecked(Settings.System.getInt(getContentResolver(),
 		Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
 	mKillAppLongpressBack.setOnPreferenceChangeListener(this);
 
-	mVolumeWakeScreen = (CheckBoxPreference) prefSet.findPreference(VOLUME_WAKE_SCREEN);
+	mVolumeWakeScreen = (SwitchPreference) prefSet.findPreference(VOLUME_WAKE_SCREEN);
 	mVolumeWakeScreen.setChecked(Settings.System.getInt(resolver,
 		Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
 	mVolumeWakeScreen.setOnPreferenceChangeListener(this);
