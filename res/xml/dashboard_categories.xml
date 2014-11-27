@@ -31,6 +31,17 @@
                 android:icon="@drawable/ic_settings_lollipopdream"
                 />
 
+        <!-- DSP Manager-->
+        <dashboard-tile
+        	android:id="@+id/dspmanager_settings"
+        	android:icon="@drawable/ic_settings_dspmanager"
+        	android:title="@string/dspmanager_title">
+        	<intent
+            	    android:action="android.intent.action.MAIN"
+            	    android:targetPackage="com.bel.android.dspmanager"
+            	    android:targetClass="com.bel.android.dspmanager.activity.DSPManager"  />
+        </dashboard-tile>
+
         <!-- SuperSU-->
         <dashboard-tile
         	android:id="@+id/supersu_settings"
