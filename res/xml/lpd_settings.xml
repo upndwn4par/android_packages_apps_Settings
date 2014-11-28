@@ -23,7 +23,7 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/title_general"
+        android:title="@string/general_category"
         android:key="general_category" >
 
 	<SwitchPreference
@@ -46,6 +46,23 @@
 	    android:key="volume_wake_screen"
 	    android:title="@string/volume_wake_screen_title"
 	    android:summary="@string/volume_wake_screen_summary" />
+
+   </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/led_category"
+        android:key="led_category" >
+
+	<PreferenceScreen
+	    android:key="battery_light"
+	    android:title="@string/battery_light_title"
+	    android:summary="@string/battery_light_summary"
+	    android:fragment="com.android.settings.lollipopdream.notificationlight.BatteryLightSettings" />
+
+	<PreferenceScreen
+	    android:key="notification_light"
+	    android:title="@string/notification_light_title"
+	    android:fragment="com.android.settings.lollipopdream.notificationlight.NotificationLightSettings" />
 
    </PreferenceCategory>
 
