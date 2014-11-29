@@ -65,16 +65,6 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "LollipopDreamSettings";
     private ContentResolver resolver;
 
-    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-    public static final String VOLUME_WAKE_SCREEN = "volume_wake_screen";
-    private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
-    private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
-
-    private SwitchPreference mKillAppLongpressBack;
-    private SwitchPreference mVolumeWakeScreen;
-    private SwitchPreference mQuickUnlockScreen;
-    private SwitchPreference mQuickPullDown;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,26 +72,6 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-	mKillAppLongpressBack = (SwitchPreference) findPreference(KILL_APP_LONGPRESS_BACK);
-	mKillAppLongpressBack.setChecked(Settings.System.getInt(getContentResolver(),
-		Settings.System.KILL_APP_LONGPRESS_BACK, 0) == 1);
-	mKillAppLongpressBack.setOnPreferenceChangeListener(this);
-
-	mVolumeWakeScreen = (SwitchPreference) prefSet.findPreference(VOLUME_WAKE_SCREEN);
-	mVolumeWakeScreen.setChecked(Settings.System.getInt(resolver,
-		Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-	mVolumeWakeScreen.setOnPreferenceChangeListener(this);
-
-	mQuickUnlockScreen = (SwitchPreference) prefSet.findPreference(LOCKSCREEN_QUICK_UNLOCK_CONTROL);
-	mQuickUnlockScreen.setChecked(Settings.System.getInt(resolver,
-		Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
-	mQuickUnlockScreen.setOnPreferenceChangeListener(this);
-
-	mQuickPullDown = (SwitchPreference) prefSet.findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
-	mQuickPullDown.setChecked(Settings.System.getInt(resolver,
-		Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0) == 1);
-	mQuickPullDown.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -111,25 +81,6 @@ public class LollipopDreamSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
-        if (preference == mKillAppLongpressBack) {
-	    boolean newValue = (Boolean) value;
-	    Settings.System.putInt(getContentResolver(),
-		    Settings.System.KILL_APP_LONGPRESS_BACK, newValue ? 1 : 0);
-	} else if (preference == mVolumeWakeScreen) {
-	    boolean newValue = (Boolean) value;
-	    Settings.System.putInt(getContentResolver(),
-		    Settings.System.VOLUME_WAKE_SCREEN, newValue ? 1 : 0);
-	} else if (preference == mQuickUnlockScreen) {
-	    boolean newValue = (Boolean) value;
-	    Settings.System.putInt(getContentResolver(),
-		    Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, newValue ? 1 : 0);
-	} else if (preference == mQuickPullDown) {
-	    boolean newValue = (Boolean) value;
-	    Settings.System.putInt(getContentResolver(),
-		    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, newValue ? 1 : 0);
-        } else {
-            return false;
-        }
         return true;
     }
 }
