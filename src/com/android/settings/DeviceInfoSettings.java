@@ -111,10 +111,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             setStringSummary(KEY_SELINUX_STATUS, status);
         }
 
-        // Remove selinux information if property is not present
-        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
-                PROPERTY_SELINUX_STATUS);
-
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SAFETY_LEGAL,
                 PROPERTY_URL_SAFETYLEGAL);
@@ -424,9 +420,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             @Override
             public List<String> getNonIndexableKeys(Context context) {
                 final List<String> keys = new ArrayList<String>();
-                if (isPropertyMissing(PROPERTY_SELINUX_STATUS)) {
-                    keys.add(KEY_SELINUX_STATUS);
-                }
                 if (isPropertyMissing(PROPERTY_URL_SAFETYLEGAL)) {
                     keys.add(KEY_SAFETY_LEGAL);
                 }
