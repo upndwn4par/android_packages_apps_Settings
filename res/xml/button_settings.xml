@@ -33,6 +33,11 @@
         android:key="navigation_bar"
         android:title="@string/navigation_bar_category" >
 
+        <PreferenceScreen
+            android:key="navigation_bar_dimen"
+            android:fragment="com.android.settings.lollipopdream.NavBarDimen"
+            android:title="@string/navbar_dimen_title" />
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="navigation_bar_left"
             android:title="@string/navigation_bar_left_title"
