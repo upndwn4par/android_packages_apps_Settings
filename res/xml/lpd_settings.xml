@@ -38,6 +38,11 @@
 	    android:summary="@string/double_tap_to_sleep_summary"
 	    android:defaultValue="true" />
 
+        <PreferenceScreen
+            android:key="navigation_bar_dimen"
+            android:fragment="com.android.settings.lollipopdream.NavBarDimen"
+            android:title="@string/navbar_dimen_title" />
+
 	<com.android.settings.lollipopdream.SystemSettingSwitchPreference
 	    android:key="proximity_on_wake"
 	    android:title="@string/proximity_wake_title"
