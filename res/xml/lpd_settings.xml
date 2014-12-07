@@ -27,6 +27,12 @@
         android:key="general_category" >
 
 	<com.android.settings.lollipopdream.SystemSettingSwitchPreference
+	    android:key="show_alarm_icon"
+	    android:title="@string/show_alarm_icon_title"
+	    android:summary="@string/show_alarm_icon_summary"
+	    android:defaultValue="true" />
+
+	<com.android.settings.lollipopdream.SystemSettingSwitchPreference
 	    android:key="kill_app_longpress_back"
 	    android:title="@string/kill_app_longpress_back_title"
 	    android:summary="@string/kill_app_longpress_back_summary"

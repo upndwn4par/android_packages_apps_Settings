@@ -186,4 +186,8 @@
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
+    <!-- Alarm icon show -->
+    <string name="show_alarm_icon_title">Alarm in status bar</string>
+    <string name="show_alarm_icon_summary">Show alarm icon when alarm is set</string>
+
 </resources>
