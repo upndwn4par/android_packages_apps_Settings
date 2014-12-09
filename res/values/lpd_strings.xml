@@ -191,7 +191,7 @@
     <string name="show_alarm_icon_summary">Show alarm icon when alarm is set</string>
 
     <!-- Battery -->
-    <string name="status_bar_show_battery_percent_title">Show battery status percent</string>
-    <string name="status_bar_show_battery_percent_summary">Show battery status percent</string>
+    <string name="status_bar_show_battery_percent_title">Battery percent</string>
+    <string name="status_bar_show_battery_percent_summary">Show battery percent next to battery icon</string>
 
 </resources>
