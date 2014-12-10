@@ -39,6 +39,7 @@
     <!-- Categories -->
     <string name="general_category">General</string>
     <string name="led_category">LED</string>
+    <string name="status_bar_category">Status bar</string>
 
 
     <!-- Kill app long-press back -->
@@ -94,7 +95,7 @@
 
     <!-- Battery light settings -->
     <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">(Not supported by stock kernel)</string>
+    <string name="battery_light_summary">Customize color, and pulse length &amp; speed if supported by your device and kernel</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_list_title">Colors</string>
     <string name="battery_light_low_color_title">Battery low</string>
@@ -105,6 +106,7 @@
 
     <!-- Lights settings screen, notification light settings -->
     <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_summary">Customize color, pulse length &amp; speed, and per app settings</string>
     <string name="notification_light_general_title">General</string>
     <string name="notification_light_applist_title">Apps</string>
     <string name="notification_light_phonelist_title">Phone</string>
@@ -127,6 +129,7 @@
 
     <!-- Navigation bar -->
     <string name="navbar_dimen_title">Navigation bar dimensions</string>
+    <string name="navbar_dimen_summary">Customize height and width in portrait and landscape modes</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation bar height while in portrait mode.</string>
@@ -155,6 +158,7 @@
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_title">Clock and date style</string>
+    <string name="status_bar_clock_summary">Customize position, color, and more</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
@@ -192,6 +196,6 @@
 
     <!-- Battery -->
     <string name="status_bar_show_battery_percent_title">Battery percent</string>
-    <string name="status_bar_show_battery_percent_summary">Show battery percent next to battery icon</string>
+    <string name="status_bar_show_battery_percent_summary">Show percent next to battery icon</string>
 
 </resources>
