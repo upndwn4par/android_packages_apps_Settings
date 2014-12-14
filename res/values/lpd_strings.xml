@@ -95,7 +95,7 @@
 
     <!-- Battery light settings -->
     <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Customize color, and pulse length &amp; speed if supported by your device and kernel</string>
+    <string name="battery_light_summary">Customize color, and pulse length &amp; speed</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_list_title">Colors</string>
     <string name="battery_light_low_color_title">Battery low</string>
@@ -197,7 +197,7 @@
     <!-- Battery percentage -->
     <string name="status_bar_battery_percentage_title">Show battery percentage</string>
     <string name="status_bar_battery_percentage_dialog_title">Battery percentage</string>
-    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
     <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
