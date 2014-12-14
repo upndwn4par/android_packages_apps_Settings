@@ -194,8 +194,11 @@
     <string name="show_alarm_icon_title">Alarm in status bar</string>
     <string name="show_alarm_icon_summary">Show alarm icon when alarm is set</string>
 
-    <!-- Battery -->
-    <string name="status_bar_show_battery_percent_title">Battery percent</string>
-    <string name="status_bar_show_battery_percent_summary">Show percent next to battery icon</string>
+    <!-- Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Show battery percentage</string>
+    <string name="status_bar_battery_percentage_dialog_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
 </resources>
