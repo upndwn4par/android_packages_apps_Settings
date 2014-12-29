@@ -69,8 +69,8 @@
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>
 
-    <!-- DSP Manager -->
-    <string name="dspmanager_title">DSP Manager</string>
+    <!-- Music effects -->
+    <string name="music_effects_title">AudioFX</string>
 
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Edit light settings</string>

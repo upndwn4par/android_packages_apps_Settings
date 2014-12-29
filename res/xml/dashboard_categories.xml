@@ -102,15 +102,15 @@
                 android:icon="@drawable/ic_settings_notifications"
                 />
 
-        <!-- DSP Manager-->
+        <!-- Music Effects-->
         <dashboard-tile
-        	android:id="@+id/dspmanager_settings"
-        	android:icon="@drawable/ic_settings_dspmanager"
-        	android:title="@string/dspmanager_title">
+        	android:id="@+id/music_effects_settings"
+        	android:icon="@drawable/ic_settings_music_effects"
+        	android:title="@string/music_effects_title">
         	<intent
             	    android:action="android.intent.action.MAIN"
-            	    android:targetPackage="com.bel.android.dspmanager"
-            	    android:targetClass="com.bel.android.dspmanager.activity.DSPManager"  />
+            	    android:targetPackage="org.cyanogenmod.audiofx"
+            	    android:targetClass="org.cyanogenmod.audiofx.ActivityMusic"  />
         </dashboard-tile>
 
         <!-- Display -->
