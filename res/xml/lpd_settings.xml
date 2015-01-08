@@ -32,6 +32,15 @@
 	    android:summary="@string/kill_app_longpress_back_summary"
 	    android:defaultValue="true" />
 
+	<PreferenceScreen
+	    android:key="lockclock_settings"
+	    android:title="@string/lockclock_title"
+	    android:summary="@string/lockclock_summary">
+	    <intent android:action="android.intent.action.MAIN"
+		android:targetPackage="com.cyanogenmod.lockclock"
+		android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+	</PreferenceScreen>
+
         <PreferenceScreen
             android:key="navigation_bar_dimen"
             android:fragment="com.android.settings.lollipopdream.NavBarDimen"

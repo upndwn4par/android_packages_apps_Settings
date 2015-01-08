@@ -364,4 +364,8 @@
    <string name="status_bar_show_weather_title">Weather</string>
    <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
+   <!-- LockClock -->
+   <string name="lockclock_title">cLock widget</string>
+   <string name="lockclock_summary">Customize settings for cLock widget</string>
+
 </resources>
