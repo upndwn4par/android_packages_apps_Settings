@@ -1264,7 +1264,6 @@ public class SettingsActivity extends Activity
                             !(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
                         removeTile = true;
                     }
-                }
                 } else if (id == R.id.supersu_settings) {
                     // Embedding into Settings is supported from SuperSU v1.85 and up
                     boolean supported = false;
