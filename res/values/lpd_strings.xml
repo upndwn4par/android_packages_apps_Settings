@@ -48,4 +48,8 @@
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>
 
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back_title">Back button app kill</string>
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back button</string>
+
 </resources>
