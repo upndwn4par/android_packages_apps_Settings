@@ -62,6 +62,9 @@ public class QSTileHolder {
         } else if (tileType.equals("location")) {
             resId = R.drawable.ic_settings_location;
             stringId = R.string.location_title;
+        } else if (tileType.equals("notifications")) {
+            resId = R.drawable.ic_settings_notifications;
+            stringId = R.string.notifications_title;
         } else if (tileType.equals("cast")) {
             resId = R.drawable.ic_qs_cast;
             stringId = R.string.cast_screen;

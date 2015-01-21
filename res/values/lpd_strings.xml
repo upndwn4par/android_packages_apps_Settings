@@ -100,4 +100,7 @@
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
+    <!-- Notification drawer -->
+    <string name="notifications_title">Notifications</string>
+
 </resources>
