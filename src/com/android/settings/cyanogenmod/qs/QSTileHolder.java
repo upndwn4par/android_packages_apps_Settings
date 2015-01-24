@@ -114,6 +114,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_lock_screen_on";
                 stringId = R.string.qs_title_lockscreen;
                 break;
+            case QSConstants.TILE_NOTIFICATIONS:
+                resourceName = "ic_qs_ringer_audible";
+                stringId = R.string.notifications_title;
+                break;
             default:
                 return null;
         }
