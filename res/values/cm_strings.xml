@@ -280,7 +280,7 @@
     <string name="cmupdate_settings_title">CyanogenMod updates</string>
 
     <!-- About phone screen, CyanogenMod version -->
-    <string name="mod_version">CyanogenMod version</string>
+    <string name="mod_version">Lollipop Dream version</string>
     <string name="mod_version_default">Unknown</string>
     <string name="model_name">Model name</string>
 
@@ -292,7 +292,7 @@
     <string name="advanced_settings">Advanced settings</string>
     <string name="advanced_settings_summary">Enable more settings options</string>
 
-    <string name="contributor_cloud_title">Contributors</string>
+    <string name="contributor_cloud_title">CyanogenMod Contributors</string>
 
     <!--- Tap To Wake -->
     <string name="double_tap_to_wake_title">Double-tap to wake</string>
