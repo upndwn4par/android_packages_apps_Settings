@@ -107,4 +107,8 @@
     <!-- Notification drawer -->
     <string name="notifications_title">Notifications</string>
 
+    <!-- LockClock -->
+    <string name="lockclock_title">cLock widget</string>
+    <string name="lockclock_summary">Customize settings for cLock widget </string>
+
 </resources>
