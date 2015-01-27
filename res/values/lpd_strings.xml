@@ -27,6 +27,10 @@
     <string name="enabled">Enabled</string>
     <string name="default_string">Default</string>
     <string name="choose_app">Choose application</string>
+
+    <!-- Categories -->
+    <string name="general_category">General</string>
+    <string name="misc_settings_title">More</string>
     
     <!-- Navigation bar -->
     <string name="navbar_dimen_title">Dimensions</string>
