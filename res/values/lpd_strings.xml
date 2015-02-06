@@ -118,4 +118,8 @@
     <string name="doze_timeout_title">Ambient display timeout</string>
     <string name="doze_timeout_summary">Time that the screen stays on for notification pulse</string>
 
+    <!-- QS pull down disable on lockscreen -->
+    <string name="block_on_secure_keyguard_title">Quick settings lockscreen disable</string>
+    <string name="block_on_secure_keyguard_summary">Do not allow quick settings pull down on secure lockscreen</string>
+
 </resources>
