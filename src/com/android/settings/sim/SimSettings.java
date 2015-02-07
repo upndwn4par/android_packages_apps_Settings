@@ -16,16 +16,10 @@
 
 package com.android.settings.sim;
 
-import android.provider.SearchIndexableResource;
-import com.android.settings.R;
-
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
-import android.content.Intent;
 import android.content.Context;
-import android.content.res.Resources;
-import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -33,26 +27,21 @@ import android.os.SystemProperties;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings.SettingNotFoundException;
 import android.telephony.SubInfoRecord;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import android.telecom.PhoneAccount;
-import android.telephony.CellInfo;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
+
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.TelephonyIntents;
+import com.android.settings.R;
 import com.android.settings.RestrictedSettingsFragment;
 import com.android.settings.Utils;
 import com.android.settings.notification.DropDownPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import com.android.settings.search.Indexable.SearchIndexProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +55,6 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
 
     private static final String DISALLOW_CONFIG_SIM = "no_config_sim";
     private static final String SIM_ENABLER_CATEGORY = "sim_enablers";
-    private static final String SIM_CARD_CATEGORY = "sim_cards";
     private static final String SIM_ACTIVITIES_CATEGORY = "sim_activities";
     private static final String KEY_CELLULAR_DATA = "sim_cellular_data";
     private static final String KEY_CALLS = "sim_calls";
@@ -156,7 +144,6 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         addPreferencesFromResource(R.xml.sim_settings);
 
         mPrimarySubSelect = (Preference) findPreference(KEY_PRIMARY_SUB_SELECT);
-        final PreferenceCategory simCards = (PreferenceCategory)findPreference(SIM_CARD_CATEGORY);
         final PreferenceCategory simEnablers =
                 (PreferenceCategory)findPreference(SIM_ENABLER_CATEGORY);
 
@@ -164,7 +151,6 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
         mSimEnablers = new ArrayList<MultiSimEnablerPreference>(mNumSlots);
         for (int i = 0; i < mNumSlots; ++i) {
             final SubInfoRecord sir = findRecordBySlotId(i);
-            simCards.addPreference(new SimPreference(getActivity(), sir, i));
             if (mNumSlots > 1) {
                 mSimEnablers.add(i, new MultiSimEnablerPreference(
                         getActivity(), sir, mHandler, i));
@@ -183,21 +169,8 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
     private void updateAllOptions() {
         Log.d(TAG,"updateAllOptions");
         mSubInfoList = SubscriptionManager.getActiveSubInfoList();
-        updateSimSlotValues();
         updateActivitesCategory();
         updateSimEnablers();
-    }
-
-    private void updateSimSlotValues() {
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        final int prefSize = prefScreen.getPreferenceCount();
-        for (int i = 0; i < prefSize; ++i) {
-            Preference pref = prefScreen.getPreference(i);
-            if (pref instanceof SimPreference) {
-                ((SimPreference)pref).update();
-            }
-        }
     }
 
     private void updateActivitesCategory() {
@@ -351,12 +324,11 @@ public class SimSettings extends RestrictedSettingsFragment implements Indexable
     @Override
     public boolean onPreferenceTreeClick(final PreferenceScreen preferenceScreen,
             final Preference preference) {
-        if (preference instanceof SimPreference) {
-            ((SimPreference) preference).createEditDialog((SimPreference) preference);
-        } else if (preference == mPrimarySubSelect) {
+        if (preference instanceof MultiSimEnablerPreference) {
+            ((MultiSimEnablerPreference) preference).createEditDialog();
+        }  else if (preference == mPrimarySubSelect) {
             startActivity(mPrimarySubSelect.getIntent());
         }
-
         return true;
     }
 

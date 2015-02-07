@@ -31,6 +31,7 @@
 
 package com.android.settings.sim;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -44,14 +45,18 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.Preference;
 import android.provider.Settings;
-import android.telephony.SubscriptionManager;
 import android.telephony.SubInfoRecord;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -78,7 +83,6 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
 
     private static final int CONFIRM_ALERT_DLG_ID = 1;
     private static final int ERROR_ALERT_DLG_ID = 2;
-    private static final int RESULT_ALERT_DLG_ID = 3;
 
     private int mSlotId;
     private SubInfoRecord mSir;
@@ -89,8 +93,8 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
     private int mSwitchVisibility = View.VISIBLE;
     private Switch mSwitch;
     private Handler mParentHandler = null;
-    private static AlertDialog sAlertDialog = null;
-    private static ProgressDialog sProgressDialog = null;
+    private AlertDialog mAlertDialog = null;
+    private ProgressDialog mProgressDialog = null;
     //Delay for progress dialog to dismiss
     private static final int PROGRESS_DLG_TIME_OUT = 30000;
     private static final int MSG_DELAY_TIME = 2000;
@@ -203,28 +207,23 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
         }
     }
 
+    @Override
     public void setEnabled(boolean isEnabled) {
         if (mSwitch != null) {
             mSwitch.setEnabled(isEnabled);
         }
+        super.setEnabled(isEnabled);
     }
 
     private void updateSummary() {
         Resources res = mContext.getResources();
-        String summary;
         boolean isActivated = (mSir.mStatus == SubscriptionManager.ACTIVE);
         logd("updateSummary: subId " + mSir.subId + " isActivated = " + isActivated +
                 " slot id = " + mSlotId);
 
-        if (isActivated) {
-            summary = mContext.getString(R.string.sim_enabler_summary,
-                    res.getString(R.string.sim_enabled));
-        } else {
-            summary = mContext.getString(R.string.sim_enabler_summary,
-                    res.getString(hasCard() ? R.string.sim_disabled : R.string.sim_missing));
-        }
-
         if (mSubSummary != null) {
+            String simSlot = res.getString(R.string.sim_card_number_title, mSlotId + 1);
+            String summary = res.getString(R.string.sim_settings_summary, simSlot, mSir.number);
             mSubSummary.setText(summary);
         }
         setChecked(isActivated);
@@ -317,52 +316,50 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
         String title = mSir == null ? mContext.getString(R.string.sim_enabler_sim)
                 : mSir.displayName;
         // Confirm only one AlertDialog instance to show.
-        dismissDialog(sAlertDialog);
-        dismissDialog(sProgressDialog);
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle(title);
+        dismissDialog(mAlertDialog);
+        dismissDialog(mProgressDialog);
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         switch(dialogId) {
             case CONFIRM_ALERT_DLG_ID:
+                builder.setTitle(title);
                 builder.setMessage(mContext.getString(R.string.sim_enabler_need_disable_sim));
-                builder.setPositiveButton(android.R.string.ok, mDialogClickListener);
+                builder.setPositiveButton(R.string.sim_enabler_deactivate, mDialogClickListener);
                 builder.setNegativeButton(android.R.string.no, mDialogClickListener);
                 builder.setOnCancelListener(mDialogCanceListener);
                 break;
             case ERROR_ALERT_DLG_ID:
                 builder.setMessage(mContext.getString(msgId));
-                builder.setNeutralButton(android.R.string.ok, mDialogClickListener);
+                builder.setPositiveButton(android.R.string.ok,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int which) {
+                                update();
+                            }
+                        });
                 builder.setCancelable(false);
                 break;
-            case RESULT_ALERT_DLG_ID:
-                String msg = mCurrentState ? mContext.getString(R.string.sub_activate_success) :
-                        mContext.getString(R.string.sub_deactivate_success);
-                builder.setMessage(msg);
-                builder.setNeutralButton(android.R.string.ok, null);
+            default:
                 break;
-           default:
-           break;
         }
 
-        sAlertDialog = builder.create();
-        sAlertDialog.setCanceledOnTouchOutside(false);
-        sAlertDialog.show();
+        mAlertDialog = builder.create();
+        mAlertDialog.setCanceledOnTouchOutside(false);
+        mAlertDialog.show();
     }
 
     private void showProgressDialog() {
-        String title = mSir == null ? mContext.getString(R.string.sim_enabler_sim)
+        String simName = mSir == null ? mContext.getString(R.string.sim_enabler_sim)
                 : mSir.displayName;
 
         String msg = mContext.getString(mCurrentState ? R.string.sim_enabler_enabling
-                : R.string.sim_enabler_disabling);
-        dismissDialog(sProgressDialog);
-        sProgressDialog = new ProgressDialog(mContext);
-        sProgressDialog.setIndeterminate(true);
-        sProgressDialog.setTitle(title);
-        sProgressDialog.setMessage(msg);
-        sProgressDialog.setCancelable(false);
-        sProgressDialog.setCanceledOnTouchOutside(false);
-        sProgressDialog.show();
+                : R.string.sim_enabler_disabling, simName);
+        dismissDialog(mProgressDialog);
+        mProgressDialog = new ProgressDialog(mContext);
+        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setMessage(msg);
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        mProgressDialog.show();
 
         sendMessage(EVT_PROGRESS_DLG_TIME_OUT, mHandler, PROGRESS_DLG_TIME_OUT);
     }
@@ -376,8 +373,8 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
 
     public void cleanUp() {
         unregisterReceiver();
-        dismissDialog(sProgressDialog);
-        dismissDialog(sAlertDialog);
+        dismissDialog(mProgressDialog);
+        dismissDialog(mAlertDialog);
     }
 
     private void unregisterReceiver() {
@@ -393,9 +390,6 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
                         sendSubConfigurationRequest();
                     } else if (which == DialogInterface.BUTTON_NEGATIVE) {
                         setChecked(true);
-                        mSubSummary.setText(mContext.getString(
-                                R.string.sim_enabler_summary,
-                                mContext.getString(R.string.sim_enabled)));
                     } else if (which == DialogInterface.BUTTON_NEUTRAL) {
                         update();
                     }
@@ -432,28 +426,79 @@ public class MultiSimEnablerPreference extends Preference implements OnCheckedCh
     };
 
     private Handler mHandler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                switch(msg.what) {
-                    case EVT_SHOW_RESULT_DLG:
-                        logd("EVT_SHOW_RESULT_DLG");
-                        update();
-                        showAlertDialog(RESULT_ALERT_DLG_ID, 0);
-                        mHandler.removeMessages(EVT_PROGRESS_DLG_TIME_OUT);
-                        break;
-                    case EVT_SHOW_PROGRESS_DLG:
-                        logd("EVT_SHOW_PROGRESS_DLG");
-                        showProgressDialog();
-                        break;
-                    case EVT_PROGRESS_DLG_TIME_OUT:
-                        logd("EVT_PROGRESS_DLG_TIME_OUT");
-                        dismissDialog(sProgressDialog);
-                        break;
-                    default:
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case EVT_SHOW_RESULT_DLG:
+                    logd("EVT_SHOW_RESULT_DLG");
+                    update();
+                    dismissDialog(mProgressDialog);
+                    mHandler.removeMessages(EVT_PROGRESS_DLG_TIME_OUT);
                     break;
-                }
+                case EVT_SHOW_PROGRESS_DLG:
+                    logd("EVT_SHOW_PROGRESS_DLG");
+                    showProgressDialog();
+                    break;
+                case EVT_PROGRESS_DLG_TIME_OUT:
+                    logd("EVT_PROGRESS_DLG_TIME_OUT");
+                    dismissDialog(mProgressDialog);
+                    break;
+                default:
+                    break;
             }
-        };
+        }
+    };
+
+    public void createEditDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        final LayoutInflater inflater = LayoutInflater.from(mContext);
+
+        final View dialogLayout = inflater.inflate(R.layout.multi_sim_dialog, null);
+        builder.setView(dialogLayout);
+
+        final EditText nameText = (EditText) dialogLayout.findViewById(R.id.sim_name);
+        nameText.setText(mSir.displayName);
+
+        TextView numberView = (TextView)dialogLayout.findViewById(R.id.number);
+        numberView.setText(mSir.number);
+
+        TextView carrierView = (TextView)dialogLayout.findViewById(R.id.carrier);
+        TelephonyManager tm = (TelephonyManager)
+                mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        String spn = tm.getSimOperatorName(mSir.subId);
+        if (TextUtils.isEmpty(spn) && !tm.isNetworkRoaming(mSir.subId)) {
+            // Operator did not write the SPN inside the SIM, so set
+            // the current network operator as the SIM name, but only if
+            // we're not roaming.
+            spn = tm.getNetworkOperatorName(mSir.subId);
+        }
+        carrierView.setText(spn);
+
+        builder.setTitle(R.string.sim_editor_title);
+
+        builder.setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int whichButton) {
+                final Spinner displayNumbers =
+                        (Spinner)dialogLayout.findViewById(R.id.display_numbers);
+
+                final int formatSetting = displayNumbers.getSelectedItemPosition() == 0
+                        ? SubscriptionManager.DISPLAY_NUMBER_LAST
+                        : SubscriptionManager.DISPLAY_NUMBER_FIRST;
+                SubscriptionManager.setDisplayNumberFormat(formatSetting, mSir.subId);
+
+                mSir.displayName = nameText.getText().toString();
+                SubscriptionManager.setDisplayName(mSir.displayName,
+                        mSir.subId, SubscriptionManager.NAME_SOURCE_USER_INPUT);
+
+                update();
+            }
+        });
+
+        builder.setNegativeButton(R.string.cancel, null);
+
+        builder.show();
+    }
 
     private void logd(String msg) {
         if (DBG) Log.d(TAG + "(" + mSlotId + ")", msg);
