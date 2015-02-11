@@ -122,4 +122,8 @@
     <string name="block_on_secure_keyguard_title">Quick settings lockscreen disable</string>
     <string name="block_on_secure_keyguard_summary">Do not allow quick settings pull down on secure lockscreen</string>
 
+    <!-- Show super user icon in status bar -->
+    <string name="show_su_icon_title">Show superuser icon</string>
+    <string name="show_su_icon_summary">Display the superuser icon in status bar</string>
+
 </resources>
