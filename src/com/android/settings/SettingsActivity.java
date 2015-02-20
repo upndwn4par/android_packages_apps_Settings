@@ -189,7 +189,7 @@ public class SettingsActivity extends Activity
     protected static final String EXTRA_PREFS_SET_BACK_TEXT = "extra_prefs_set_back_text";
 
     /**
-     * When starting this activity and using {@link #EXTRA_SHOW_FRAGMENT},
+     * When starting this activity and using {@link #EXTRA_SHOW_FRAGMENT},those
      * those extra can also be specify to supply the title or title res id to be shown for
      * that fragment.
      */
@@ -318,7 +318,7 @@ public class SettingsActivity extends Activity
             ProfilesSettings.class.getName(),
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
             NotificationManagerSettings.class.getName(),
-            LockScreenSettings.class.getName()
+            LockScreenSettings.class.getName(),
 	    MiscSettings.class.getName()
     };
 
