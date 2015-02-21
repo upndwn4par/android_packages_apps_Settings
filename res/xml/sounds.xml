@@ -128,4 +128,5 @@
                 android:persistent="false"
                 settings:advanced="true"/>
     </PreferenceCategory>
+
 </PreferenceScreen>

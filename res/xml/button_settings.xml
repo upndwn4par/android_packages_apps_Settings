@@ -34,6 +34,17 @@
         android:key="navigation_bar_category"
         android:title="@string/navigation_bar_category" >
 
+	<com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+	    android:key="kill_app_longpress_back"
+	    android:title="@string/kill_app_longpress_back_title"
+	    android:summary="@string/kill_app_longpress_back_summary"
+	    android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:key="navigation_bar_dimen"
+            android:fragment="com.android.settings.lollipopdream.NavBarDimen"
+            android:title="@string/navbar_dimen_title" />
+
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
             android:key="navigation_bar_left"
             android:title="@string/navigation_bar_left_title"

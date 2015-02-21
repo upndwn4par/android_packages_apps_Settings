@@ -134,6 +134,7 @@
                 android:targetPackage="com.cyanogenmod.settings.device"
                 android:targetClass="com.cyanogenmod.settings.device.GesturePadSettings" />
         </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
