@@ -52,6 +52,7 @@ import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
 import android.provider.SearchIndexableResource;
@@ -102,6 +103,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
     private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
+    private static final String KEY_DOZE_TIMEOUT = "doze_timeout";
+    private static final String KEY_DOZE_CATEGORY = "category_doze_options";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -125,6 +128,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mColorEnhancement;
 
     private TwoStatePreference mNotificationPulse;
+    private SlimSeekBarPreference mDozeTimeout;
+    private PreferenceCategory mDozeCategory;
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -157,6 +162,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 findPreference(KEY_CATEGORY_INTERFACE);
         PreferenceCategory calibrationPrefs = (PreferenceCategory)
                 findPreference(KEY_CATEGORY_CALIBRATION);
+
+	PreferenceScreen prefSet = getPreferenceScreen();
 
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
         mAccelerometer = (SwitchPreference) findPreference(DisplayRotation.KEY_ACCELEROMETER);
@@ -208,6 +215,24 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (calibrationPrefs != null && !isAdaptiveBacklightSupported()) {
             calibrationPrefs.removePreference(mAdaptiveBacklight);
             mAdaptiveBacklight = null;
+        }
+
+        mDozeCategory = (PreferenceCategory) findPreference(KEY_DOZE_CATEGORY);
+        if (isDozeAvailable(activity)) {
+            // Doze master switch
+            mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
+            mDozePreference.setOnPreferenceChangeListener(this);
+
+            // Doze timeout seekbar
+            mDozeTimeout = (SlimSeekBarPreference) findPreference(KEY_DOZE_TIMEOUT);
+            mDozeTimeout.setDefault(3000);
+            mDozeTimeout.isMilliseconds(true);
+            mDozeTimeout.setInterval(1);
+            mDozeTimeout.minimumValue(100);
+            mDozeTimeout.multiplyValue(100);
+            mDozeTimeout.setOnPreferenceChangeListener(this);
+        } else {
+            prefSet.removePreference(mDozeCategory);
         }
 
         mSunlightEnhancement = (SwitchPreference) findPreference(KEY_SUNLIGHT_ENHANCEMENT);
@@ -515,6 +540,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             int value = Settings.Secure.getInt(getContentResolver(), DOZE_ENABLED, 1);
             mDozePreference.setChecked(value != 0);
         }
+
+        // Update doze timeout value
+        if (mDozeTimeout != null) {
+            final int statusDozeTimeout = Settings.System.getInt(getContentResolver(),
+                    Settings.System.DOZE_TIMEOUT, 3000);
+            // minimum 100 is 1 interval of the 100 multiplier
+            mDozeTimeout.setInitValue((statusDozeTimeout / 100) - 1);
+        }
     }
 
     private void updateScreenSaverSummary() {
@@ -630,6 +663,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mDozePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), DOZE_ENABLED, value ? 1 : 0);
+        }
+        if (preference == mDozeTimeout) {
+            int dozeTimeout = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOZE_TIMEOUT, dozeTimeout);
         }
         return true;
     }
@@ -806,6 +844,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     }
                     if (!isDozeAvailable(context)) {
                         result.add(KEY_DOZE);
+                        result.add(KEY_DOZE_TIMEOUT);
                     }
                     return result;
                 }
