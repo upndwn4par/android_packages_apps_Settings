@@ -101,6 +101,7 @@ import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.lollipopdream.MiscSettings;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.notification.AppNotificationSettings;
@@ -188,7 +189,7 @@ public class SettingsActivity extends Activity
     protected static final String EXTRA_PREFS_SET_BACK_TEXT = "extra_prefs_set_back_text";
 
     /**
-     * When starting this activity and using {@link #EXTRA_SHOW_FRAGMENT},
+     * When starting this activity and using {@link #EXTRA_SHOW_FRAGMENT},those
      * those extra can also be specify to supply the title or title res id to be shown for
      * that fragment.
      */
@@ -248,7 +249,8 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.status_bar_settings,
             R.id.dashboard,
-            R.id.privacy_settings_cyanogenmod
+            R.id.privacy_settings_cyanogenmod,
+            R.id.misc_settings
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -317,7 +319,8 @@ public class SettingsActivity extends Activity
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
             NotificationManagerSettings.class.getName(),
             LockScreenSettings.class.getName(),
-            LiveDisplay.class.getName()
+            LiveDisplay.class.getName(),
+	    MiscSettings.class.getName()
     };
 
 
@@ -1233,6 +1236,16 @@ public class SettingsActivity extends Activity
                             getResources().getBoolean(R.bool.config_hidePerformanceSettings);
                     if (forceHide ||
                             !(pm.hasPowerProfiles() || (showDev && !Build.TYPE.equals("user")))) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.supersu_settings) {
+                    // Embedding into Settings is supported from SuperSU v1.85 and up
+                    boolean supported = false;
+                    try {
+                    supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
                         removeTile = true;
                     }
                 }

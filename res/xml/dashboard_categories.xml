@@ -128,6 +128,24 @@
                 android:icon="@drawable/ic_settings_display"
                 />
 
+        <!-- Status bar -->
+        <dashboard-tile
+                android:id="@+id/status_bar_settings"
+                android:title="@string/status_bar_title"
+                android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
+                android:icon="@drawable/ic_settings_extdesk_hidenavbar"
+                settings:advanced="true"
+                />
+
+        <!-- Notification drawer -->
+        <dashboard-tile
+                android:id="@+id/notification_drawer_settings"
+                android:title="@string/notification_drawer_title"
+                android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
+                android:icon="@drawable/ic_settings_notification_drawer"
+                settings:advanced="true"
+                />
+
         <!-- Themes -->
         <!-- NOTE: Intent.parseIntent looks for "categories" tag and not "category" -->
         <dashboard-tile
@@ -139,6 +157,14 @@
                 <categories android:name="cyanogenmod.intent.category.APP_THEMES" />
             </intent>
         </dashboard-tile>
+
+        <!-- Buttons -->
+        <dashboard-tile
+                android:id="@+id/button_settings"
+                android:title="@string/button_pref_title"
+                android:fragment="com.android.settings.ButtonSettings"
+                android:icon="@drawable/ic_settings_buttons"
+                />
 
         <!-- Notification manager -->
         <dashboard-tile
@@ -154,14 +180,6 @@
                 android:title="@string/lockscreen_settings"
                 android:fragment="com.android.settings.lockscreen.LockScreenSettings"
                 android:icon="@drawable/ic_settings_security"
-                />
-
-        <!-- Buttons -->
-        <dashboard-tile
-                android:id="@+id/button_settings"
-                android:title="@string/button_pref_title"
-                android:fragment="com.android.settings.ButtonSettings"
-                android:icon="@drawable/ic_settings_buttons"
                 />
 
         <!-- O-Click -->
@@ -193,20 +211,12 @@
                 android:icon="@drawable/ic_settings_battery"
                 />
 
-        <!-- Security -->
+        <!-- Misc Settings -->
         <dashboard-tile
-                android:id="@+id/security_settings"
-                android:title="@string/security_settings_title"
-                android:fragment="com.android.settings.SecuritySettings"
-                android:icon="@drawable/ic_settings_security"
-                />
-
-        <!-- Manage users -->
-        <dashboard-tile
-                android:id="@+id/user_settings"
-                android:title="@string/user_settings_title"
-                android:fragment="com.android.settings.users.UserSettings"
-                android:icon="@drawable/ic_settings_multiuser"
+                android:id="@+id/misc_settings"
+                android:title="@string/misc_settings_title"
+                android:fragment="com.android.settings.lollipopdream.MiscSettings"
+                android:icon="@drawable/ic_settings_more"
                 />
 
     </dashboard-category>
@@ -224,30 +234,29 @@
                 android:icon="@drawable/ic_settings_home"
                 />
 
+        <!-- Security -->
+        <dashboard-tile
+                android:id="@+id/security_settings"
+                android:title="@string/security_settings_title"
+                android:fragment="com.android.settings.SecuritySettings"
+                android:icon="@drawable/ic_settings_security"
+                />
+
+        <!-- CyanogenMod Privacy Settings -->
+        <!-- This is the 'real' Privacy items and includes Privacy Guard, Blacklist & WhisperPush -->
+        <dashboard-tile
+                android:id="@+id/privacy_settings_cyanogenmod"
+                android:title="@string/privacy_settings_cyanogenmod_title"
+                android:fragment="com.android.settings.cyanogenmod.PrivacySettings"
+                android:icon="@drawable/ic_settings_privacy"
+                />
+
         <!-- Profiles -->
         <dashboard-tile
                 android:id="@+id/profile_settings"
                 android:fragment="com.android.settings.profiles.ProfilesSettings"
                 android:title="@string/profiles_settings_title"
                 android:icon="@drawable/ic_settings_profiles"
-                />
-
-        <!-- Status bar -->
-        <dashboard-tile
-                android:id="@+id/status_bar_settings"
-                android:title="@string/status_bar_title"
-                android:fragment="com.android.settings.cyanogenmod.StatusBarSettings"
-                android:icon="@drawable/ic_settings_extdesk_hidenavbar"
-                settings:advanced="true"
-                />
-
-        <!-- Notification drawer -->
-        <dashboard-tile
-                android:id="@+id/notification_drawer_settings"
-                android:title="@string/notification_drawer_title"
-                android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
-                android:icon="@drawable/ic_settings_notification_drawer"
-                settings:advanced="true"
                 />
 
         <!-- Application Settings -->
@@ -266,21 +275,20 @@
                 android:icon="@drawable/ic_settings_accounts"
                 />
 
-        <!-- CyanogenMod Privacy Settings -->
-        <!-- This is the 'real' Privacy items and includes Privacy Guard, Blacklist & WhisperPush -->
-        <dashboard-tile
-                android:id="@+id/privacy_settings_cyanogenmod"
-                android:title="@string/privacy_settings_cyanogenmod_title"
-                android:fragment="com.android.settings.cyanogenmod.PrivacySettings"
-                android:icon="@drawable/ic_settings_privacy"
-                />
-
         <!-- Location -->
         <dashboard-tile
                 android:id="@+id/location_settings"
                 android:title="@string/location_settings_title"
                 android:fragment="com.android.settings.location.LocationSettings"
                 android:icon="@drawable/ic_settings_location"
+                />
+
+        <!-- Manage users -->
+        <dashboard-tile
+                android:id="@+id/user_settings"
+                android:title="@string/user_settings_title"
+                android:fragment="com.android.settings.users.UserSettings"
+                android:icon="@drawable/ic_settings_multiuser"
                 />
 
     </dashboard-category>
@@ -346,6 +354,17 @@
                 android:icon="@drawable/ic_settings_performance"
                 settings:advanced="true"
                 />
+
+        <!-- SuperSU-->
+        <dashboard-tile
+        	android:id="@+id/supersu_settings"
+        	android:icon="@drawable/ic_settings_superuser"
+        	android:title="@string/supersu_title">
+        	<intent
+            	    android:action="android.intent.action.MAIN"
+            	    android:targetPackage="eu.chainfire.supersu"
+            	    android:targetClass="eu.chainfire.supersu.MainActivity"  />
+        </dashboard-tile>
 
         <!-- Development -->
         <dashboard-tile

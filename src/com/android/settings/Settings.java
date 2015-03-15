@@ -15,7 +15,6 @@
  */
 
 package com.android.settings;
-
 import com.android.settings.applications.AppOpsSummary;
 
 /**
@@ -105,5 +104,6 @@ public class Settings extends SettingsActivity {
     public static class SoundSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LockScreenSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LiveDisplayActivity extends SettingsActivity { /* empty */ }
+    public static class MiscSettingsActivity extends SettingsActivity { /* empty */ }
 }
 
