@@ -278,9 +278,8 @@ public class PowerUsageSummary extends SettingsPreferenceFragment
         refresh.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                 MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 
-        MenuItem batterySaver = menu.add(0, MENU_BATTERY_SAVER, 0,
-                R.string.battery_saver_threshold);
-        batterySaver.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+	MenuItem batterySaver = menu.add(0, MENU_BATTERY_SAVER, 0, R.string.battery_saver);
+	batterySaver.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
 
         String helpUrl;
         if (!TextUtils.isEmpty(helpUrl = getResources().getString(R.string.help_url_battery))) {
