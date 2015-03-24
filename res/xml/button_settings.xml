@@ -70,6 +70,11 @@
             android:title="@string/navigation_ring_title"
             settings:advanced="true"/>
 
+        <PreferenceScreen
+            android:key="recents_clear_all"
+            android:fragment="com.android.settings.lollipopdream.RecentsClearAllSettings"
+            android:title="@string/recents_panel_category" />
+
         <ListPreference
             android:key="navigation_recents_long_press"
             android:dialogTitle="@string/navigation_bar_recents_title"

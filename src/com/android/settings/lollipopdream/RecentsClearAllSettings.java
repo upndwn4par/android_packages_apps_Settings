@@ -62,8 +62,8 @@ import android.view.WindowManagerGlobal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MiscSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
-    private static final String TAG = "MiscSettings";
+public class RecentsClearAllSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+    private static final String TAG = "RecentsClearAllSettings";
     private ContentResolver resolver;
 
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
@@ -75,10 +75,22 @@ public class MiscSettings extends SettingsPreferenceFragment implements Preferen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.misc_settings);
+        addPreferencesFromResource(R.xml.recents_clear_all_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mRecentsClearAll = (SwitchPreference) prefSet.findPreference(SHOW_CLEAR_ALL_RECENTS);
+        mRecentsClearAll.setChecked(Settings.System.getIntForUser(resolver,
+            Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT) == 1);
+        mRecentsClearAll.setOnPreferenceChangeListener(this);
+
+        mRecentsClearAllLocation = (ListPreference) prefSet.findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 0, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+        updateRecentsLocation(location);
     }
 
     @Override
@@ -90,6 +102,43 @@ public class MiscSettings extends SettingsPreferenceFragment implements Preferen
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 	ContentResolver resolver = getActivity().getContentResolver();
 
+        if (preference == mRecentsClearAll) {
+            boolean show = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.SHOW_CLEAR_ALL_RECENTS, show ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            updateRecentsLocation(location);
+            return true;
+        }
         return false;
+    }
+
+    private void updateRecentsLocation(int value) {
+        ContentResolver resolver = getContentResolver();
+        Resources res = getResources();
+        int summary = -1;
+
+        Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, value);
+
+        if (value == 0) {
+            Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, 0);
+            summary = R.string.recents_clear_all_location_top_right;
+        } else if (value == 1) {
+            Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, 1);
+            summary = R.string.recents_clear_all_location_top_left;
+        } else if (value == 2) {
+            Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, 2);
+            summary = R.string.recents_clear_all_location_bottom_right;
+        } else if (value == 3) {
+            Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3);
+            summary = R.string.recents_clear_all_location_bottom_left;
+        }
+        if (mRecentsClearAllLocation != null && summary != -1) {
+            mRecentsClearAllLocation.setSummary(res.getString(summary));
+        }
     }
 }
