@@ -281,7 +281,7 @@
     <string name="update_recovery_off_warning">WARNING: When this feature is disabled, your installed recovery will not be updated with OS upgrades.\n\nFuture OS updates may not install with outdated or custom recovery versions.\n\nDo you really want to disable this feature?</string>
 
     <!-- About phone screen, CyanogenMod version -->
-    <string name="mod_version">CyanogenMod version</string>
+    <string name="mod_version">Lollipop Dream version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- About phone screen, model name -->
@@ -291,7 +291,7 @@
     <string name="build_date">Build date</string>
     <string name="build_date_default" translatable="false">2014-01-01-0000</string>
 
-    <string name="contributor_cloud_title">Contributors</string>
+    <string name="contributor_cloud_title">CyanogenMod Contributors</string>
 
     <!-- About phone screen, service state -->
     <string name="phone_service_state">Voice: <xliff:g id="voice_state">%1$s</xliff:g>, data: <xliff:g id="data_state">%2$s</xliff:g></string>
@@ -389,19 +389,6 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
-    <!-- Status bar - Clock -->
-    <string name="status_bar_clock_style_title">Clock style</string>
-    <string name="status_bar_clock_style_right">Right</string>
-    <string name="status_bar_clock_style_left">Left</string>
-    <string name="status_bar_clock_style_center">Center</string>
-    <string name="status_bar_clock_style_hidden">Hidden</string>
-
-    <string name="status_bar_am_pm_title">AM/PM style</string>
-    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
-    <string name="status_bar_am_pm_normal">Normal</string>
-    <string name="status_bar_am_pm_small">Small</string>
-    <string name="status_bar_am_pm_hidden">Hidden</string>
-
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
@@ -484,6 +471,10 @@
     <!-- Touchscreen hovering -->
     <string name="touchscreen_hovering_title">Touchscreen hovering</string>
     <string name="touchscreen_hovering_summary">Allows you to hover the screen like a mouse in web browsers, remote desktops, etc</string>
+
+    <!-- High touch sensitivity -->
+    <string name="high_touch_sensitivity_title">High touch sensitivity</string>
+    <string name="high_touch_sensitivity_summary">Increase touchscreen sensitivity so it can be used while wearing gloves</string>
 
     <!-- App ops -->
     <string name="app_ops_summaries_coarse_location">coarse location</string>
