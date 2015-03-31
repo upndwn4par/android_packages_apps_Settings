@@ -133,6 +133,12 @@
                 android:summary="@string/summary_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
+        <!-- Recents clear all customization-->
+        <PreferenceScreen
+            android:key="recents_clear_all"
+            android:fragment="com.android.settings.lollipopdream.RecentsClearAllSettings"
+            android:title="@string/recents_panel_category" />
+
         <!-- Search in Recents -->
         <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
                 android:key="recents_show_search_bar"
