@@ -57,13 +57,6 @@
                 android:title="@string/accelerometer_title"
                 settings:advanced="false"/>
 
-        <!-- Doze // Ambient display -->
-        <SwitchPreference
-                android:key="doze"
-                android:title="@string/doze_title"
-                android:summary="@string/doze_summary"
-                android:persistent="false" />
-
         <!-- Lift to wake -->
         <SwitchPreference
                 android:key="lift_to_wake"
@@ -140,14 +133,6 @@
                 android:summary="@string/summary_font_size"
                 android:dialogTitle="@string/dialog_title_font_size" />
 
-        <!-- Search in Recents -->
-        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-                android:key="recents_show_search_bar"
-                android:title="@string/recents_show_searchbar"
-                settings:keywords="@string/keywords_recents_show_searchbar"
-                android:defaultValue="true"
-                settings:advanced="true" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -167,5 +152,44 @@
                 android:fragment="com.android.settings.notificationlight.NotificationLightSettings" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+            android:key="recents"
+            android:title="@string/recents_category">
+
+        <!-- Recents clear all customization-->
+        <PreferenceScreen
+                android:key="recents_clear_all"
+                android:fragment="com.android.settings.lollipopdream.RecentsClearAllSettings"
+                android:title="@string/recents_panel_category" />
+
+        <!-- Search in Recents -->
+        <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+                android:key="recents_show_search_bar"
+                android:title="@string/recents_show_searchbar"
+                settings:keywords="@string/keywords_recents_show_searchbar"
+                android:defaultValue="true"
+                settings:advanced="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+                android:key="category_doze_options"
+                android:title="@string/display_category_doze_options_title" >
+
+        <SwitchPreference
+                android:key="doze"
+                android:title="@string/doze_title"
+                android:summary="@string/doze_summary"
+                android:persistent="false" />
+
+        <!-- Ambient display timeout -->
+        <SlimSeekBarPreference
+                android:key="doze_timeout"
+                android:title="@string/doze_timeout_title"
+                android:summary="@string/doze_timeout_summary"
+                android:dependency="doze" />
+
+     </PreferenceCategory>
 
 </PreferenceScreen>
